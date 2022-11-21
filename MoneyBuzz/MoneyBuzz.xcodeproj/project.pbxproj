@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		157E4157292C08FA00522665 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157E4156292C08FA00522665 /* StockData.swift */; };
 		78ACCF28292BE11B00528FDE /* MoneyBuzzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF27292BE11B00528FDE /* MoneyBuzzApp.swift */; };
 		78ACCF2A292BE11B00528FDE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF29292BE11B00528FDE /* ContentView.swift */; };
 		78ACCF2C292BE11D00528FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78ACCF2B292BE11D00528FDE /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		157E4156292C08FA00522665 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = SOURCE_ROOT; };
 		78ACCF24292BE11B00528FDE /* MoneyBuzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBuzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78ACCF27292BE11B00528FDE /* MoneyBuzzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBuzzApp.swift; sourceTree = "<group>"; };
 		78ACCF29292BE11B00528FDE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		78ACCF58292BE81700528FDE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				157E4156292C08FA00522665 /* StockData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			files = (
 				78ACCF31292BE11D00528FDE /* Persistence.swift in Sources */,
 				78ACCF34292BE11D00528FDE /* MoneyBuzz.xcdatamodeld in Sources */,
+				157E4157292C08FA00522665 /* StockData.swift in Sources */,
 				78ACCF2A292BE11B00528FDE /* ContentView.swift in Sources */,
 				78ACCF28292BE11B00528FDE /* MoneyBuzzApp.swift in Sources */,
 				78ACCF5B292BE91100528FDE /* DataService.swift in Sources */,
