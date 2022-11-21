@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct StockData: Codable {
+struct StockData: Codable, Identifiable {
+    let id = UUID()
     struct MetaData: Codable {
         let information: String
         let symbol: String
