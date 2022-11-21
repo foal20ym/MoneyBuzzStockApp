@@ -16,6 +16,7 @@
 		78ACCF3E292BE11E00528FDE /* MoneyBuzzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF3D292BE11E00528FDE /* MoneyBuzzTests.swift */; };
 		78ACCF48292BE11E00528FDE /* MoneyBuzzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF47292BE11E00528FDE /* MoneyBuzzUITests.swift */; };
 		78ACCF4A292BE11E00528FDE /* MoneyBuzzUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF49292BE11E00528FDE /* MoneyBuzzUITestsLaunchTests.swift */; };
+		78ACCF5B292BE91100528FDE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF5A292BE91100528FDE /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		78ACCF43292BE11E00528FDE /* MoneyBuzzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyBuzzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78ACCF47292BE11E00528FDE /* MoneyBuzzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBuzzUITests.swift; sourceTree = "<group>"; };
 		78ACCF49292BE11E00528FDE /* MoneyBuzzUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBuzzUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		78ACCF5A292BE91100528FDE /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		78ACCF59292BE82900528FDE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				78ACCF5A292BE91100528FDE /* DataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				78ACCF34292BE11D00528FDE /* MoneyBuzz.xcdatamodeld in Sources */,
 				78ACCF2A292BE11B00528FDE /* ContentView.swift in Sources */,
 				78ACCF28292BE11B00528FDE /* MoneyBuzzApp.swift in Sources */,
+				78ACCF5B292BE91100528FDE /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
