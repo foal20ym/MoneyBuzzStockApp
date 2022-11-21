@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		78ACCF28292BE11B00528FDE /* MoneyBuzzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF27292BE11B00528FDE /* MoneyBuzzApp.swift */; };
+		78ACCF2A292BE11B00528FDE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF29292BE11B00528FDE /* ContentView.swift */; };
+		78ACCF2C292BE11D00528FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78ACCF2B292BE11D00528FDE /* Assets.xcassets */; };
+		78ACCF2F292BE11D00528FDE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78ACCF2E292BE11D00528FDE /* Preview Assets.xcassets */; };
+		78ACCF31292BE11D00528FDE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF30292BE11D00528FDE /* Persistence.swift */; };
+		78ACCF34292BE11D00528FDE /* MoneyBuzz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF32292BE11D00528FDE /* MoneyBuzz.xcdatamodeld */; };
+		78ACCF3E292BE11E00528FDE /* MoneyBuzzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF3D292BE11E00528FDE /* MoneyBuzzTests.swift */; };
+		78ACCF48292BE11E00528FDE /* MoneyBuzzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF47292BE11E00528FDE /* MoneyBuzzUITests.swift */; };
+		78ACCF4A292BE11E00528FDE /* MoneyBuzzUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF49292BE11E00528FDE /* MoneyBuzzUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78ACCF3A292BE11E00528FDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78ACCF1C292BE11B00528FDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78ACCF23292BE11B00528FDE;
+			remoteInfo = MoneyBuzz;
+		};
+		78ACCF44292BE11E00528FDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78ACCF1C292BE11B00528FDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78ACCF23292BE11B00528FDE;
+			remoteInfo = MoneyBuzz;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		78ACCF24292BE11B00528FDE /* MoneyBuzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBuzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78ACCF27292BE11B00528FDE /* MoneyBuzzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBuzzApp.swift; sourceTree = "<group>"; };
+		78ACCF29292BE11B00528FDE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		78ACCF2B292BE11D00528FDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		78ACCF2E292BE11D00528FDE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		78ACCF30292BE11D00528FDE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		78ACCF33292BE11D00528FDE /* MoneyBuzz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoneyBuzz.xcdatamodel; sourceTree = "<group>"; };
+		78ACCF39292BE11E00528FDE /* MoneyBuzzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyBuzzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78ACCF3D292BE11E00528FDE /* MoneyBuzzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBuzzTests.swift; sourceTree = "<group>"; };
+		78ACCF43292BE11E00528FDE /* MoneyBuzzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyBuzzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78ACCF47292BE11E00528FDE /* MoneyBuzzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBuzzUITests.swift; sourceTree = "<group>"; };
+		78ACCF49292BE11E00528FDE /* MoneyBuzzUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBuzzUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78ACCF21292BE11B00528FDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78ACCF36292BE11E00528FDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78ACCF40292BE11E00528FDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78ACCF1B292BE11B00528FDE = {
+			isa = PBXGroup;
+			children = (
+				78ACCF26292BE11B00528FDE /* MoneyBuzz */,
+				78ACCF3C292BE11E00528FDE /* MoneyBuzzTests */,
+				78ACCF46292BE11E00528FDE /* MoneyBuzzUITests */,
+				78ACCF25292BE11B00528FDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		78ACCF25292BE11B00528FDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78ACCF24292BE11B00528FDE /* MoneyBuzz.app */,
+				78ACCF39292BE11E00528FDE /* MoneyBuzzTests.xctest */,
+				78ACCF43292BE11E00528FDE /* MoneyBuzzUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78ACCF26292BE11B00528FDE /* MoneyBuzz */ = {
+			isa = PBXGroup;
+			children = (
+				78ACCF59292BE82900528FDE /* Service */,
+				78ACCF58292BE81700528FDE /* Model */,
+				78ACCF57292BE27C00528FDE /* ViewModel */,
+				78ACCF56292BE14C00528FDE /* Views */,
+				78ACCF27292BE11B00528FDE /* MoneyBuzzApp.swift */,
+				78ACCF2B292BE11D00528FDE /* Assets.xcassets */,
+				78ACCF30292BE11D00528FDE /* Persistence.swift */,
+				78ACCF32292BE11D00528FDE /* MoneyBuzz.xcdatamodeld */,
+				78ACCF2D292BE11D00528FDE /* Preview Content */,
+			);
+			path = MoneyBuzz;
+			sourceTree = "<group>";
+		};
+		78ACCF2D292BE11D00528FDE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				78ACCF2E292BE11D00528FDE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		78ACCF3C292BE11E00528FDE /* MoneyBuzzTests */ = {
+			isa = PBXGroup;
+			children = (
+				78ACCF3D292BE11E00528FDE /* MoneyBuzzTests.swift */,
+			);
+			path = MoneyBuzzTests;
+			sourceTree = "<group>";
+		};
+		78ACCF46292BE11E00528FDE /* MoneyBuzzUITests */ = {
+			isa = PBXGroup;
+			children = (
+				78ACCF47292BE11E00528FDE /* MoneyBuzzUITests.swift */,
+				78ACCF49292BE11E00528FDE /* MoneyBuzzUITestsLaunchTests.swift */,
+			);
+			path = MoneyBuzzUITests;
+			sourceTree = "<group>";
+		};
+		78ACCF56292BE14C00528FDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				78ACCF29292BE11B00528FDE /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		78ACCF57292BE27C00528FDE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		78ACCF58292BE81700528FDE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		78ACCF59292BE82900528FDE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		78ACCF23292BE11B00528FDE /* MoneyBuzz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78ACCF4D292BE11E00528FDE /* Build configuration list for PBXNativeTarget "MoneyBuzz" */;
+			buildPhases = (
+				78ACCF20292BE11B00528FDE /* Sources */,
+				78ACCF21292BE11B00528FDE /* Frameworks */,
+				78ACCF22292BE11B00528FDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoneyBuzz;
+			productName = MoneyBuzz;
+			productReference = 78ACCF24292BE11B00528FDE /* MoneyBuzz.app */;
+			productType = "com.apple.product-type.application";
+		};
+		78ACCF38292BE11E00528FDE /* MoneyBuzzTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78ACCF50292BE11E00528FDE /* Build configuration list for PBXNativeTarget "MoneyBuzzTests" */;
+			buildPhases = (
+				78ACCF35292BE11E00528FDE /* Sources */,
+				78ACCF36292BE11E00528FDE /* Frameworks */,
+				78ACCF37292BE11E00528FDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78ACCF3B292BE11E00528FDE /* PBXTargetDependency */,
+			);
+			name = MoneyBuzzTests;
+			productName = MoneyBuzzTests;
+			productReference = 78ACCF39292BE11E00528FDE /* MoneyBuzzTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		78ACCF42292BE11E00528FDE /* MoneyBuzzUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78ACCF53292BE11E00528FDE /* Build configuration list for PBXNativeTarget "MoneyBuzzUITests" */;
+			buildPhases = (
+				78ACCF3F292BE11E00528FDE /* Sources */,
+				78ACCF40292BE11E00528FDE /* Frameworks */,
+				78ACCF41292BE11E00528FDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78ACCF45292BE11E00528FDE /* PBXTargetDependency */,
+			);
+			name = MoneyBuzzUITests;
+			productName = MoneyBuzzUITests;
+			productReference = 78ACCF43292BE11E00528FDE /* MoneyBuzzUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78ACCF1C292BE11B00528FDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					78ACCF23292BE11B00528FDE = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					78ACCF38292BE11E00528FDE = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 78ACCF23292BE11B00528FDE;
+					};
+					78ACCF42292BE11E00528FDE = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 78ACCF23292BE11B00528FDE;
+					};
+				};
+			};
+			buildConfigurationList = 78ACCF1F292BE11B00528FDE /* Build configuration list for PBXProject "MoneyBuzz" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 78ACCF1B292BE11B00528FDE;
+			productRefGroup = 78ACCF25292BE11B00528FDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78ACCF23292BE11B00528FDE /* MoneyBuzz */,
+				78ACCF38292BE11E00528FDE /* MoneyBuzzTests */,
+				78ACCF42292BE11E00528FDE /* MoneyBuzzUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78ACCF22292BE11B00528FDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78ACCF2F292BE11D00528FDE /* Preview Assets.xcassets in Resources */,
+				78ACCF2C292BE11D00528FDE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78ACCF37292BE11E00528FDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78ACCF41292BE11E00528FDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78ACCF20292BE11B00528FDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78ACCF31292BE11D00528FDE /* Persistence.swift in Sources */,
+				78ACCF34292BE11D00528FDE /* MoneyBuzz.xcdatamodeld in Sources */,
+				78ACCF2A292BE11B00528FDE /* ContentView.swift in Sources */,
+				78ACCF28292BE11B00528FDE /* MoneyBuzzApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78ACCF35292BE11E00528FDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78ACCF3E292BE11E00528FDE /* MoneyBuzzTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78ACCF3F292BE11E00528FDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78ACCF4A292BE11E00528FDE /* MoneyBuzzUITestsLaunchTests.swift in Sources */,
+				78ACCF48292BE11E00528FDE /* MoneyBuzzUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78ACCF3B292BE11E00528FDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78ACCF23292BE11B00528FDE /* MoneyBuzz */;
+			targetProxy = 78ACCF3A292BE11E00528FDE /* PBXContainerItemProxy */;
+		};
+		78ACCF45292BE11E00528FDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78ACCF23292BE11B00528FDE /* MoneyBuzz */;
+			targetProxy = 78ACCF44292BE11E00528FDE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		78ACCF4B292BE11E00528FDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		78ACCF4C292BE11E00528FDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78ACCF4E292BE11E00528FDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MoneyBuzz/Preview Content\"";
+				DEVELOPMENT_TEAM = S9RZ9K6S84;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ju.dmp.2022.MoneyBuzz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78ACCF4F292BE11E00528FDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MoneyBuzz/Preview Content\"";
+				DEVELOPMENT_TEAM = S9RZ9K6S84;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ju.dmp.2022.MoneyBuzz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		78ACCF51292BE11E00528FDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S9RZ9K6S84;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ju.dmp.2022.MoneyBuzzTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoneyBuzz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MoneyBuzz";
+			};
+			name = Debug;
+		};
+		78ACCF52292BE11E00528FDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S9RZ9K6S84;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ju.dmp.2022.MoneyBuzzTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoneyBuzz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MoneyBuzz";
+			};
+			name = Release;
+		};
+		78ACCF54292BE11E00528FDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S9RZ9K6S84;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ju.dmp.2022.MoneyBuzzUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoneyBuzz;
+			};
+			name = Debug;
+		};
+		78ACCF55292BE11E00528FDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S9RZ9K6S84;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ju.dmp.2022.MoneyBuzzUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoneyBuzz;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78ACCF1F292BE11B00528FDE /* Build configuration list for PBXProject "MoneyBuzz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78ACCF4B292BE11E00528FDE /* Debug */,
+				78ACCF4C292BE11E00528FDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78ACCF4D292BE11E00528FDE /* Build configuration list for PBXNativeTarget "MoneyBuzz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78ACCF4E292BE11E00528FDE /* Debug */,
+				78ACCF4F292BE11E00528FDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78ACCF50292BE11E00528FDE /* Build configuration list for PBXNativeTarget "MoneyBuzzTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78ACCF51292BE11E00528FDE /* Debug */,
+				78ACCF52292BE11E00528FDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78ACCF53292BE11E00528FDE /* Build configuration list for PBXNativeTarget "MoneyBuzzUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78ACCF54292BE11E00528FDE /* Debug */,
+				78ACCF55292BE11E00528FDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		78ACCF32292BE11D00528FDE /* MoneyBuzz.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				78ACCF33292BE11D00528FDE /* MoneyBuzz.xcdatamodel */,
+			);
+			currentVersion = 78ACCF33292BE11D00528FDE /* MoneyBuzz.xcdatamodel */;
+			path = MoneyBuzz.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 78ACCF1C292BE11B00528FDE /* Project object */;
+}
