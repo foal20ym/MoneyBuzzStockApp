@@ -9,77 +9,37 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
+    
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
+        UITabBar.appearance().unselectedItemTintColor = UIColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
+        UITabBar.appearance().barTintColor = UIColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
+        //UITabBar.appearance().isTranslucent = false
+    }
+    
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
+        TabView {
+            HomeView() // Change to AccountInfoView when that view is done.
+                .tabItem() {
+                    Image(systemName: "person")
+                    Text("Account")
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+            
+            HomeView()
+                .tabItem() {
+                    Image(systemName: "house")
+                    Text("Home")
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+            
+            HomeView() // Change to WatchListView when that view is done.
+                .tabItem() {
+                    Image(systemName: "list.clipboard")
+                    Text("Watchlist")
                 }
-            }
-            Text("Select an item")
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
+        .accentColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
