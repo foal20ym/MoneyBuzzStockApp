@@ -56,7 +56,7 @@
 		78ACCF47292BE11E00528FDE /* MoneyBuzzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBuzzUITests.swift; sourceTree = "<group>"; };
 		78ACCF49292BE11E00528FDE /* MoneyBuzzUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBuzzUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		78ACCF5A292BE91100528FDE /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		78EDD503292D2258005B56A2 /* StockDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockDataViewModel.swift; path = MoneyBuzz/StockDataViewModel.swift; sourceTree = SOURCE_ROOT; };
+		78EDD503292D2258005B56A2 /* StockDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockDataViewModel.swift; path = MoneyBuzz/ViewModel/StockDataViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +107,10 @@
 		78ACCF26292BE11B00528FDE /* MoneyBuzz */ = {
 			isa = PBXGroup;
 			children = (
+				78EDD505292D2F4D005B56A2 /* ViewModel */,
 				78EDD4FD292D1C44005B56A2 /* Model */,
 				151C054D292CCBE200FC5D14 /* Info.plist */,
 				78ACCF59292BE82900528FDE /* Service */,
-				78ACCF57292BE27C00528FDE /* ViewModel */,
 				78ACCF56292BE14C00528FDE /* Views */,
 				78ACCF27292BE11B00528FDE /* MoneyBuzzApp.swift */,
 				78ACCF2B292BE11D00528FDE /* Assets.xcassets */,
@@ -155,14 +155,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		78ACCF57292BE27C00528FDE /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				78EDD503292D2258005B56A2 /* StockDataViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		78ACCF59292BE82900528FDE /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +169,14 @@
 				157E4156292C08FA00522665 /* StockData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		78EDD505292D2F4D005B56A2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				78EDD503292D2258005B56A2 /* StockDataViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
