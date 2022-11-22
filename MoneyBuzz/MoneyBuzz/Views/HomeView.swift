@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject private var vm = StockViewModel()
     var body: some View {
         NavigationStack {
             List {
