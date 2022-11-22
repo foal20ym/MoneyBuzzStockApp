@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		151C054D292CCBE200FC5D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		157E4156292C08FA00522665 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = SOURCE_ROOT; };
+		157E4156292C08FA00522665 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockData.swift; path = MoneyBuzz/Model/StockData.swift; sourceTree = SOURCE_ROOT; };
 		78ACCF24292BE11B00528FDE /* MoneyBuzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBuzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78ACCF27292BE11B00528FDE /* MoneyBuzzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBuzzApp.swift; sourceTree = "<group>"; };
 		78ACCF29292BE11B00528FDE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,9 +103,9 @@
 		78ACCF26292BE11B00528FDE /* MoneyBuzz */ = {
 			isa = PBXGroup;
 			children = (
+				78EDD4FD292D1C44005B56A2 /* Model */,
 				151C054D292CCBE200FC5D14 /* Info.plist */,
 				78ACCF59292BE82900528FDE /* Service */,
-				78ACCF58292BE81700528FDE /* Model */,
 				78ACCF57292BE27C00528FDE /* ViewModel */,
 				78ACCF56292BE14C00528FDE /* Views */,
 				78ACCF27292BE11B00528FDE /* MoneyBuzzApp.swift */,
@@ -157,20 +157,20 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		78ACCF58292BE81700528FDE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				157E4156292C08FA00522665 /* StockData.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		78ACCF59292BE82900528FDE /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				78ACCF5A292BE91100528FDE /* DataService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		78EDD4FD292D1C44005B56A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				157E4156292C08FA00522665 /* StockData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
