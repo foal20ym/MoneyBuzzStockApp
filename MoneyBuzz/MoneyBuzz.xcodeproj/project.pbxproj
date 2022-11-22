@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		157C5726292D210100E0957A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C5725292D210100E0957A /* HomeView.swift */; };
 		157E4157292C08FA00522665 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157E4156292C08FA00522665 /* StockData.swift */; };
 		78ACCF28292BE11B00528FDE /* MoneyBuzzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF27292BE11B00528FDE /* MoneyBuzzApp.swift */; };
 		78ACCF2A292BE11B00528FDE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF29292BE11B00528FDE /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		151C054D292CCBE200FC5D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		157C5725292D210100E0957A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		157E4156292C08FA00522665 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockData.swift; path = MoneyBuzz/Model/StockData.swift; sourceTree = SOURCE_ROOT; };
 		78ACCF24292BE11B00528FDE /* MoneyBuzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBuzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78ACCF27292BE11B00528FDE /* MoneyBuzzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBuzzApp.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				78ACCF29292BE11B00528FDE /* ContentView.swift */,
+				157C5725292D210100E0957A /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78ACCF31292BE11D00528FDE /* Persistence.swift in Sources */,
+				157C5726292D210100E0957A /* HomeView.swift in Sources */,
 				78ACCF34292BE11D00528FDE /* MoneyBuzz.xcdatamodeld in Sources */,
 				157E4157292C08FA00522665 /* StockData.swift in Sources */,
 				78ACCF2A292BE11B00528FDE /* ContentView.swift in Sources */,
