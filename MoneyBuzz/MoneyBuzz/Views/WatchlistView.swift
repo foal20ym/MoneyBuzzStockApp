@@ -15,11 +15,11 @@ struct WatchlistView: View {
         NavigationStack {
             List {
                 HStack {
-                    TextField("Ticker:", text: $stockModel.ticker)
+                    TextField("Ticker:", text: $stockModel.stockTicker)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Button("Add", action: stockModel.addStock)
-                        .disabled(!stockModel.validTicker)
+                        .disabled(!stockModel.isTickerValid)
                 }
                 if !stockModel.stocks.isEmpty {
                     ForEach(stockModel.stocks) { stock in
@@ -38,7 +38,7 @@ struct WatchlistView: View {
                         }
                         .background(Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803))
                     }
-                    .onDelete(perform: stockModel.delete(at:))
+                    .onDelete(perform: stockModel.deletaFromStocks(at:))
                 } else {
                     Text("Your watchlist is empty!").font(.title)
                 }

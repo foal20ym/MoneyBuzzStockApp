@@ -14,8 +14,8 @@ final class StockViewModel: ObservableObject {
     private var cancellable = Set<AnyCancellable>()
     
     @Published var stocks: [StockData] = []
-    @Published var ticker = ""
-    @Published var validTicker = false
+    @Published var stockTicker = ""
+    @Published var isTickerValid = false
     @Published var stockEntities: [StockEntity] = []
     
     public init() {
@@ -38,16 +38,16 @@ final class StockViewModel: ObservableObject {
     }
     
     func validateTicker() {
-        $ticker
+        $stockTicker
             .sink { [unowned self] newValue in
-                self.validTicker = !newValue.isEmpty
+                self.isTickerValid = !newValue.isEmpty
             }
             .store(in: &cancellable)
     }
     
     func addStock() {
         let newStock = StockEntity(context: context)
-        newStock.ticker = ticker
+        newStock.ticker = stockTicker
         
         do {
             try context.save()
@@ -56,13 +56,16 @@ final class StockViewModel: ObservableObject {
         }
         
         stockEntities.append(newStock)
-        loadStockData(for: ticker)
+        loadStockData(for: stockTicker)
         
-        ticker = ""
+        stockTicker = ""
     }
     
-    func delete(at indexSet: IndexSet) {
-        guard let index = indexSet.first else { return }
+    func deletaFromStocks(at indexSet: IndexSet) {
+        guard let index = indexSet.first else {
+            return
+            
+        }
         
         stocks.remove(at: index)
         let stockToRemove = stockEntities.remove(at: index)
@@ -76,8 +79,8 @@ final class StockViewModel: ObservableObject {
         }
     }
     
-    public func loadStockData(for ticker: String) {
-        DataService.loadDataFromAPI(for: ticker).sink { completion in
+    public func loadStockData(for stockTicker: String) {
+        DataService.loadDataFromAPI(for: stockTicker.uppercased()).sink { completion in
             switch completion {
             case .failure(let error):
                 print(error)
