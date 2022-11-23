@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		154A0D4E292E5EC5000EA6F9 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154A0D4D292E5EC5000EA6F9 /* WatchlistView.swift */; };
 		157C5726292D210100E0957A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C5725292D210100E0957A /* HomeView.swift */; };
 		157E4157292C08FA00522665 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157E4156292C08FA00522665 /* StockData.swift */; };
 		78ACCF28292BE11B00528FDE /* MoneyBuzzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF27292BE11B00528FDE /* MoneyBuzzApp.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		151C054D292CCBE200FC5D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		154A0D4D292E5EC5000EA6F9 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 		157C5725292D210100E0957A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		157E4156292C08FA00522665 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockData.swift; path = MoneyBuzz/Model/StockData.swift; sourceTree = SOURCE_ROOT; };
 		78ACCF24292BE11B00528FDE /* MoneyBuzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBuzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 			children = (
 				78ACCF29292BE11B00528FDE /* ContentView.swift */,
 				157C5725292D210100E0957A /* HomeView.swift */,
+				154A0D4D292E5EC5000EA6F9 /* WatchlistView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				78ACCF2A292BE11B00528FDE /* ContentView.swift in Sources */,
 				78EDD504292D2258005B56A2 /* StockDataViewModel.swift in Sources */,
 				78ACCF28292BE11B00528FDE /* MoneyBuzzApp.swift in Sources */,
+				154A0D4E292E5EC5000EA6F9 /* WatchlistView.swift in Sources */,
 				78ACCF5B292BE91100528FDE /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
