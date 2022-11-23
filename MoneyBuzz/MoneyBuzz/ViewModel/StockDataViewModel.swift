@@ -14,17 +14,19 @@ final class StockViewModel: ObservableObject {
     private var cancellable = Set<AnyCancellable>()
     
     @Published var stocks: [StockData] = []
-    
     @Published var ticker = ""
+    @Published var validTicker = false
     @Published var stockEntities: [StockEntity] = []
     
     public init() {
         loadFromCoreData()
+        validateTicker()
         
         stocks = []
         stockEntities.forEach { stockEntity in
             loadStockData(for: stockEntity.ticker ?? "")
         }
+        validateTicker()
     }
     
     func loadFromCoreData() {
@@ -33,6 +35,14 @@ final class StockViewModel: ObservableObject {
         } catch {
             print(error)
         }
+    }
+    
+    func validateTicker() {
+        $ticker
+            .sink { [unowned self] newValue in
+                self.validTicker = !newValue.isEmpty
+            }
+            .store(in: &cancellable)
     }
     
     func addStock() {
@@ -45,9 +55,25 @@ final class StockViewModel: ObservableObject {
             print(error)
         }
         
+        stockEntities.append(newStock)
         loadStockData(for: ticker)
         
         ticker = ""
+    }
+    
+    func delete(at indexSet: IndexSet) {
+        guard let index = indexSet.first else { return }
+        
+        stocks.remove(at: index)
+        let stockToRemove = stockEntities.remove(at: index)
+        
+        context.delete(stockToRemove)
+        
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
     }
     
     public func loadStockData(for ticker: String) {
