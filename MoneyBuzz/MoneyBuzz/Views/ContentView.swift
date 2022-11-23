@@ -31,7 +31,7 @@ struct ContentView: View {
                     Text("Home")
                 }
             
-            HomeView() // Change to WatchListView when that view is done.
+            WatchlistView()
                 .tabItem() {
                     Image(systemName: "list.clipboard")
                     Text("Watchlist")
@@ -43,6 +43,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
     }
 }

@@ -9,11 +9,45 @@ import Foundation
 import Combine
 
 final class StockViewModel: ObservableObject {
-    @Published var stocks: [StockData] = []
+    private let context = PersistenceController.shared.container.viewContext
+    
     private var cancellable = Set<AnyCancellable>()
     
+    @Published var stocks: [StockData] = []
+    
+    @Published var ticker = ""
+    @Published var stockEntities: [StockEntity] = []
+    
     public init() {
-        loadStockData(for: "TSLA")
+        loadFromCoreData()
+        
+        stocks = []
+        stockEntities.forEach { stockEntity in
+            loadStockData(for: stockEntity.ticker ?? "")
+        }
+    }
+    
+    func loadFromCoreData() {
+        do {
+            stockEntities = try context.fetch(StockEntity.fetchRequest())
+        } catch {
+            print(error)
+        }
+    }
+    
+    func addStock() {
+        let newStock = StockEntity(context: context)
+        newStock.ticker = ticker
+        
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
+        
+        loadStockData(for: ticker)
+        
+        ticker = ""
     }
     
     public func loadStockData(for ticker: String) {
@@ -32,3 +66,4 @@ final class StockViewModel: ObservableObject {
         }.store(in: &cancellable)
     }
 }
+
