@@ -19,6 +19,7 @@ struct WatchlistView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Button("Add", action: stockModel.addStock)
+                        .disabled(!stockModel.validTicker)
                 }
                 if !stockModel.stocks.isEmpty {
                     ForEach(stockModel.stocks) { stock in
@@ -37,6 +38,7 @@ struct WatchlistView: View {
                         }
                         .background(Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803))
                     }
+                    .onDelete(perform: stockModel.delete(at:))
                 } else {
                     Text("Your watchlist is empty!").font(.title)
                 }
