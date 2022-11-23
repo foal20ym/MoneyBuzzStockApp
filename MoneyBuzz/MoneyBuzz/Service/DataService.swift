@@ -10,7 +10,7 @@ import Combine
 
 
 struct DataService {
-    static func loadDataFromAPI(for stockTicker: String) -> AnyPublisher<StockData, Error> {
+    static func getDataFromStockAPI(for stockTicker: String) -> AnyPublisher<StockData, Error> {
         let url = URL(string: "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=\(stockTicker)&interval=5min&apikey=LO58U5WZML3IIJNW")!
             
         return URLSession.shared.dataTaskPublisher(for: url).tryMap { element -> Data in

@@ -45,7 +45,7 @@ final class StockViewModel: ObservableObject {
             .store(in: &cancellable)
     }
     
-    func addStock() {
+    func addStockToWatchlist() {
         let newStock = StockEntity(context: context)
         newStock.ticker = stockTicker
         
@@ -61,7 +61,7 @@ final class StockViewModel: ObservableObject {
         stockTicker = ""
     }
     
-    func deletaFromStocks(at indexSet: IndexSet) {
+    func deleteStockFromWatchlist(at indexSet: IndexSet) {
         guard let index = indexSet.first else {
             return
             
@@ -80,10 +80,11 @@ final class StockViewModel: ObservableObject {
     }
     
     public func loadStockData(for stockTicker: String) {
-        DataService.loadDataFromAPI(for: stockTicker.uppercased()).sink { completion in
+        DataService.getDataFromStockAPI(for: stockTicker.uppercased()).sink { completion in
             switch completion {
             case .failure(let error):
                 print(error)
+                return
                 //handle this later on
             case .finished:
                 return
