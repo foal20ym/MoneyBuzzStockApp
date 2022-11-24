@@ -18,8 +18,11 @@ struct WatchlistView: View {
                     TextField("Ticker:", text: $stockModel.stockTicker)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
-                    Button("Add", action: stockModel.addStockToWatchlist)
-                        .disabled(!stockModel.isTickerValid)
+                    Button(action: stockModel.addStockToWatchlist) {
+                        Label("", systemImage: "plus")
+                    }
+                    .disabled(!stockModel.isTickerValid)
+                    .foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
                 }
                 if !stockModel.stocks.isEmpty {
                     ForEach(stockModel.stocks) { stock in
@@ -40,7 +43,7 @@ struct WatchlistView: View {
                     }
                     .onDelete(perform: stockModel.deleteStockFromWatchlist(at:))
                 } else {
-                    Text("Your watchlist is empty!").font(.title)
+                    Text("Your watchlist is empty!").font(.title).foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
                 }
             }
             .scrollContentBackground(.hidden)
