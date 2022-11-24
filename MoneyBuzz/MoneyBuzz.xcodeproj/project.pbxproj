@@ -21,6 +21,9 @@
 		78ACCF4A292BE11E00528FDE /* MoneyBuzzUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF49292BE11E00528FDE /* MoneyBuzzUITestsLaunchTests.swift */; };
 		78ACCF5B292BE91100528FDE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACCF5A292BE91100528FDE /* DataService.swift */; };
 		78EDD504292D2258005B56A2 /* StockDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDD503292D2258005B56A2 /* StockDataViewModel.swift */; };
+		78EDD507292EE9AB005B56A2 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDD506292EE9AB005B56A2 /* NewsData.swift */; };
+		78EDD509292EF1C7005B56A2 /* NewsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDD508292EF1C7005B56A2 /* NewsDataService.swift */; };
+		78EDD50B292EF5C2005B56A2 /* NewsDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDD50A292EF5C2005B56A2 /* NewsDataViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		78ACCF49292BE11E00528FDE /* MoneyBuzzUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBuzzUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		78ACCF5A292BE91100528FDE /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		78EDD503292D2258005B56A2 /* StockDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockDataViewModel.swift; path = MoneyBuzz/ViewModel/StockDataViewModel.swift; sourceTree = SOURCE_ROOT; };
+		78EDD506292EE9AB005B56A2 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
+		78EDD508292EF1C7005B56A2 /* NewsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataService.swift; sourceTree = "<group>"; };
+		78EDD50A292EF5C2005B56A2 /* NewsDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				78ACCF5A292BE91100528FDE /* DataService.swift */,
+				78EDD508292EF1C7005B56A2 /* NewsDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -170,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				157E4156292C08FA00522665 /* StockData.swift */,
+				78EDD506292EE9AB005B56A2 /* NewsData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				78EDD503292D2258005B56A2 /* StockDataViewModel.swift */,
+				78EDD50A292EF5C2005B56A2 /* NewsDataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -316,9 +325,12 @@
 				157C5726292D210100E0957A /* HomeView.swift in Sources */,
 				78ACCF34292BE11D00528FDE /* MoneyBuzz.xcdatamodeld in Sources */,
 				157E4157292C08FA00522665 /* StockData.swift in Sources */,
+				78EDD507292EE9AB005B56A2 /* NewsData.swift in Sources */,
 				78ACCF2A292BE11B00528FDE /* ContentView.swift in Sources */,
+				78EDD509292EF1C7005B56A2 /* NewsDataService.swift in Sources */,
 				78EDD504292D2258005B56A2 /* StockDataViewModel.swift in Sources */,
 				78ACCF28292BE11B00528FDE /* MoneyBuzzApp.swift in Sources */,
+				78EDD50B292EF5C2005B56A2 /* NewsDataViewModel.swift in Sources */,
 				154A0D4E292E5EC5000EA6F9 /* WatchlistView.swift in Sources */,
 				78ACCF5B292BE91100528FDE /* DataService.swift in Sources */,
 			);
