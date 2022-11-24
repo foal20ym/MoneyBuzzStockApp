@@ -29,11 +29,11 @@ struct NewsData: Codable, Identifiable {
     
     
     let metaData: MetaData
-    let newsData: [Data]
+    let data: [Data]
     
     private enum CodingKeys: String, CodingKey {
         case metaData = "meta"
-        case newsData = "data"
+        case data = "data"
     }
     
 }

@@ -24,6 +24,7 @@
 		78EDD507292EE9AB005B56A2 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDD506292EE9AB005B56A2 /* NewsData.swift */; };
 		78EDD509292EF1C7005B56A2 /* NewsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDD508292EF1C7005B56A2 /* NewsDataService.swift */; };
 		78EDD50B292EF5C2005B56A2 /* NewsDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDD50A292EF5C2005B56A2 /* NewsDataViewModel.swift */; };
+		78EDD50D292FB1E8005B56A2 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDD50C292FB1E8005B56A2 /* NewsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		78EDD506292EE9AB005B56A2 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		78EDD508292EF1C7005B56A2 /* NewsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataService.swift; sourceTree = "<group>"; };
 		78EDD50A292EF5C2005B56A2 /* NewsDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataViewModel.swift; sourceTree = "<group>"; };
+		78EDD50C292FB1E8005B56A2 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				78ACCF29292BE11B00528FDE /* ContentView.swift */,
 				157C5725292D210100E0957A /* HomeView.swift */,
 				154A0D4D292E5EC5000EA6F9 /* WatchlistView.swift */,
+				78EDD50C292FB1E8005B56A2 /* NewsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				78EDD507292EE9AB005B56A2 /* NewsData.swift in Sources */,
 				78ACCF2A292BE11B00528FDE /* ContentView.swift in Sources */,
 				78EDD509292EF1C7005B56A2 /* NewsDataService.swift in Sources */,
+				78EDD50D292FB1E8005B56A2 /* NewsView.swift in Sources */,
 				78EDD504292D2258005B56A2 /* StockDataViewModel.swift in Sources */,
 				78ACCF28292BE11B00528FDE /* MoneyBuzzApp.swift in Sources */,
 				78EDD50B292EF5C2005B56A2 /* NewsDataViewModel.swift in Sources */,

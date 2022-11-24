@@ -36,6 +36,11 @@ struct ContentView: View {
                     Image(systemName: "list.clipboard")
                     Text("Watchlist")
                 }
+            NewsView()
+                .tabItem() {
+                    Image(systemName: "newspaper.fill")
+                    Text("News")
+                }
         }
         .accentColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
     }

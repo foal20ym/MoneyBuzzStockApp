@@ -12,10 +12,19 @@ import Combine
 
 final class NewsDataViewModel: ObservableObject {
     private var cancellable = Set<AnyCancellable>()
-    @Published var news: [NewsData] = []
+    @Published var news: [NewsObject] = []
+    
+    struct NewsObject: Hashable, Identifiable {
+        let id = UUID()
+        let title: String
+        let description: String
+        let source: String
+        let publishedAt: String
+
+    }
     
     public init() {
-        news = []
+        self.news = []
         loadNewsData()
     }
     
@@ -29,10 +38,10 @@ final class NewsDataViewModel: ObservableObject {
             case .finished:
                 return
             }
-        } receiveValue: { newsData in
+        } receiveValue: { [weak self ] newsData in
             DispatchQueue.main.async {
-                print(newsData)
-                self.news.append(newsData)
+                print(newsData.title)
+                self?.news.append(NewsObject(title: newsData.title, description: newsData.description, source: newsData.source, publishedAt: newsData.published_at))
             }
         }.store(in: &cancellable)
     }
