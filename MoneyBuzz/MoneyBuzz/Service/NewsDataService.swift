@@ -11,7 +11,7 @@ import Combine
 let APIKEY = "MSR9qoqe2JhOMFWnspspaZrpVcL8CjNOD8ObkaLp"
 
 struct NewsDataService {
-    static func getNewsDataFromAPI() -> AnyPublisher<NewsData, Error> {
+    static func getNewsDataFromAPI() -> AnyPublisher<NewsData.Data, Error> {
         let url = URL(string: "https://api.marketaux.com/v1/news/all?exchanges=NYSE%2CNASDAQ&api_token=\(APIKEY)")!
         
         return URLSession.shared.dataTaskPublisher(for: url).tryMap { element -> Data in
@@ -20,7 +20,7 @@ struct NewsDataService {
             }
             return element.data
         }
-        .decode(type: NewsData.self, decoder: JSONDecoder())
+        .decode(type: NewsData.Data.self, decoder: JSONDecoder())
         .eraseToAnyPublisher()
         
     }
