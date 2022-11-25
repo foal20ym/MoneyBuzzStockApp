@@ -9,25 +9,21 @@ import SwiftUI
 
 struct WatchlistView: View {
     @ObservedObject private var stockModel = StockViewModel()
-    @State var searchTicker: String = ""
+    @ObservedObject private var stockSearchModel = StockSearchViewModel()
+    
+    @State private var searchTicker = ""
+    
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color(red: 0.3703474402, green: 0.8287841678, blue: 0.747587502))]
+    }
     
     var body: some View {
         NavigationStack {
-            List {
-                HStack {
-                    TextField("Ticker:", text: $stockModel.stockTicker)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                    Button(action: stockModel.addStockToWatchlist) {
-                        Label("", systemImage: "plus")
-                    }
-                    .disabled(!stockModel.isTickerValid)
-                    .foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
-                }
-                if !stockModel.stocks.isEmpty {
-                    ForEach(stockModel.stocks) { stock in
+            VStack {
+                List {
+                    ForEach(stockSearchModel.searchResults) { results in
                         HStack {
-                            Text("\(stock.metaData.symbol)")
+                            Text("\(results.bestMatches[0].symbol)")
                             
                             Spacer()
                             
@@ -35,20 +31,54 @@ struct WatchlistView: View {
                                 .frame(width: 150)
                             
                             VStack{
-                                Text("\(stock.latestClose) ")
+                                Text("\(results.bestMatches[0].currency) ")
                                 Text("Change")
                             }
                         }
-                        .background(Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803))
                     }
-                    .onDelete(perform: stockModel.deleteStockFromWatchlist(at:))
-                } else {
-                    Text("Your watchlist is empty!").font(.title).foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
+                    .onTapGesture {
+                        stockModel.stockTicker = searchTicker
+                        stockModel.addStockToWatchlist()
+                    }
                 }
+                .searchable(text: $searchTicker)
+                .onChange(of: searchTicker, perform: { searchText in
+                    
+                    if !searchText.isEmpty {
+                        stockSearchModel.loadSearchResults(for: searchTicker)
+                        
+                    } else {
+                        stockSearchModel.searchResults = []
+                    }
+                })
+                .navigationTitle("Watchlist")
+                
+                List {
+                    if !stockModel.stocks.isEmpty {
+                        ForEach(stockModel.stocks) { stock in
+                            HStack {
+                                Text("\(stock.metaData.symbol)")
+                                
+                                Spacer()
+                                
+                                RoundedRectangle(cornerRadius: 10)
+                                    .frame(width: 150)
+                                
+                                VStack{
+                                    Text("\(stock.latestClose) ")
+                                    Text("Change")
+                                }
+                            }
+                            .background(Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803))
+                        }
+                        .onDelete(perform: stockModel.deleteStockFromWatchlist(at:))
+                    } else {
+                        Text("Your watchlist is empty!").font(.title).foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
+                    }
+                }
+                .scrollContentBackground(.hidden)
             }
-            .scrollContentBackground(.hidden)
         }
-        .navigationTitle("Watchlist")
     }
 }
 
@@ -57,4 +87,15 @@ struct WatchlistView_Previews: PreviewProvider {
         WatchlistView()
     }
 }
-
+/*
+ HStack {
+     TextField("Ticker:", text: $stockModel.stockTicker)
+         .textFieldStyle(RoundedBorderTextFieldStyle())
+     
+     Button(action: stockModel.addStockToWatchlist) {
+         Label("", systemImage: "plus")
+     }
+     .disabled(!stockModel.isTickerValid)
+     .foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
+ }
+ */
