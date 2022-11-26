@@ -12,7 +12,7 @@ import Combine
 
 final class NewsDataViewModel: ObservableObject {
     private var cancellable = Set<AnyCancellable>()
-    @Published var news: [NewsObject] = []
+    @Published var news: [NewsData] = []
     
     struct NewsObject: Hashable, Identifiable {
         let id = UUID()
@@ -20,14 +20,28 @@ final class NewsDataViewModel: ObservableObject {
         let description: String
         let source: String
         let publishedAt: String
-
+        
     }
     
     public init() {
         self.news = []
         loadNewsData()
+        dateConverter(rawDate: "2022-11-25T22:59:52.000000Z")
     }
     
+    public func dateConverter(rawDate: String) -> String {
+        let oldDateFormatter = DateFormatter()
+        oldDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.ssssssZ"
+        guard let oldDate = oldDateFormatter.date(from: rawDate) else {
+            return ""
+            
+        }
+        let convertDateFormatter = DateFormatter()
+        convertDateFormatter.dateFormat = "yyy-MM-dd"
+        
+        return convertDateFormatter.string(from: oldDate)
+       
+    }
     
     public func loadNewsData() {
         NewsDataService.getNewsDataFromAPI().sink { completion in
@@ -40,8 +54,8 @@ final class NewsDataViewModel: ObservableObject {
             }
         } receiveValue: { [weak self ] newsData in
             DispatchQueue.main.async {
-                print(newsData.title)
-                self?.news.append(NewsObject(title: newsData.title, description: newsData.description, source: newsData.source, publishedAt: newsData.published_at))
+                print(newsData)
+                self?.news.append(newsData)
             }
         }.store(in: &cancellable)
     }
