@@ -19,11 +19,11 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            HomeView() // Change to AccountInfoView when that view is done.
+            /*HomeView() // Change to AccountInfoView when that view is done.
                 .tabItem() {
                     Image(systemName: "person")
                     Text("Account")
-                }
+                } */
             
             HomeView()
                 .tabItem() {

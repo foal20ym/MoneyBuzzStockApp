@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject private var vm = StockViewModel()
+    @ObservedObject private var model = StockViewModel()
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    Text("\(Image(systemName: "globe")) World indexes").font(.title).bold().foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
-                    ForEach(0...4, id: \.self) { number in
+                    Text("\(Image(systemName: "globe")) Popular Stocks").font(.title).bold().foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
+                    ForEach(model.popularStockTickers) { stock in
                         HStack {
-                            Text("Ticker")
+                            Text(stock.metaData.symbol)
                             
                             Spacer()
                             
@@ -24,7 +24,7 @@ struct HomeView: View {
                                 .frame(width: 150)
                             
                             VStack{
-                                Text("Value")
+                                Text(stock.latestClose)
                                 Text("Change")
                             }
                         }
@@ -34,9 +34,10 @@ struct HomeView: View {
 
                 Section{
                     Text("\(Image(systemName: "eurosign")) Currencies").font(.title).bold().foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
-                    ForEach(0...5, id: \.self) { number in
+                    
+                    ForEach(model.forexPairs) { pair in
                         HStack {
-                            Text("Ticker")
+                            Text("\(pair.currencyData.currencyFromCode)\(pair.currencyData.currencyToCode)")
                             
                             Spacer()
                             
@@ -44,8 +45,8 @@ struct HomeView: View {
                                 .frame(width: 150)
                             
                             VStack{
-                                Text("Value")
-                                Text("Change")
+                                Text("Ask: \(pair.currencyData.askPrice)")
+                                Text("Bid: \(pair.currencyData.bidPrice)")
                             }
                         }
                         .background(Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803))
