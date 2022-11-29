@@ -50,6 +50,10 @@ struct StockData: Codable, Identifiable {
         timeSeries5min.first?.value.close ?? "NaN"
     }
     
+    var graphDataPoints: [CGFloat] {
+        return timeSeries5min.values.map{ CGFloat(Double($0.close)!) }
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case metaData = "Meta Data"
         case timeSeries5min = "Time Series (5min)"
