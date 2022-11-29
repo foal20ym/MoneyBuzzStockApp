@@ -45,13 +45,6 @@ final class StockViewModel: ObservableObject {
         validateTicker()
     }
     
-    func normalizeDataPointsForGraph(for datapoints: [CGFloat]) -> [CGFloat] {
-        if let min = datapoints.min(), let max = datapoints.max() {
-            return datapoints.map { ($0-min) / (max-min)}
-        }
-        return []
-    }
-    
     func loadForexPairs() {
         forexPairs = []
         popularForexPairs.forEach { pair in

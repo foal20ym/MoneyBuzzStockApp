@@ -10,11 +10,9 @@ import SwiftUI
 struct NewsView: View {
     @ObservedObject var viewModel = NewsDataViewModel()
     @State private var showSheet = false
-    @State var selectedModel = SheetModel(title: "", description: "")
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color(#colorLiteral(red: 0.3176470588, green: 0.8, blue: 0.6948974729, alpha: 1)))]
     }
-    
     var body: some View {
         NavigationStack {
                 ForEach(0..<3) {
@@ -36,11 +34,13 @@ struct NewsView: View {
                     Spacer()
                 }
                 .onTapGesture {
-                    selectedModel = SheetModel(title: "\(element.data[ix].title)", description: "\(element.data[ix].description)")
                     showSheet.toggle()
                 }
                 .sheet(isPresented: $showSheet) {
-                    SheetView(selectedTitle: $selectedModel)
+                    Text("\(element.data[ix].title)")
+                        .font(.largeTitle)
+                        .padding()
+                    Text("\(element.data[ix].description)")
                     
                 }
                 .foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
@@ -65,4 +65,10 @@ struct NewsView: View {
     }
     
     
+}
+
+struct NewsView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewsView()
+    }
 }
