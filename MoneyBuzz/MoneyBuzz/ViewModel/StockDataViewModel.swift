@@ -11,72 +11,66 @@ import Combine
 final class StockViewModel: ObservableObject {
     private let context = PersistenceController.shared.container.viewContext
     private var cancellable = Set<AnyCancellable>()
-    private let popularStocks: [String] = [
+    private let faangStocks: [String] = [
         "META",
-        "MSFT",
-        "GOOG",
-        "AMZN",
         "AAPL",
+        "AMZN",
+        "NFLX",
+        "GOOG",
     ]
-    private let popularForexPairs: [String:String] = [
-        "EUR":"USD",
-        "USD":"JPY",
-        "AUD":"USD",
-        "GBP":"USD",
+    private var mostOwnedStocks: [String] = [
+        "TSLA",
+        "AAPL",
+        "MSFT",
+        "NIO",
+        "AMC",
     ]
     @Published var stocks: [StockData] = []
     @Published var stockTicker = ""
     @Published var isTickerValid = false
     @Published var stockEntities: [StockEntity] = []
-    @Published var popularStockTickers: [StockData] = []
-    @Published var forexPairs: [CurrencyData] = []
+    @Published var faangStockTickers: [StockData] = []
+    @Published var mostOwnedStockTickers: [StockData] = []
     
     
     public init() {
         loadFromCoreData()
         validateTicker()
-        loadPopularStocks()
-        loadForexPairs()
+        loadStockLists()
         
         stocks = []
         stockEntities.forEach { stockEntity in
             loadStockData(for: stockEntity.ticker ?? "")
         }
-        validateTicker()
+        
+        faangStockTickers = []
+        mostOwnedStockTickers = []
+        
+        faangStocks.forEach { ticker in
+            loadMostOwnedStocksData(for: ticker)
+        }
+        
+        mostOwnedStocks.forEach { ticker in
+            loadFAANGStocksData(for: ticker)
+        }
     }
+
     
-    func loadForexPairs() {
-        forexPairs = []
-        popularForexPairs.forEach { pair in
-            loadPopularPairsData(for: pair.key, for: pair.value)
+    func loadStockLists() {
+        faangStockTickers = []
+        mostOwnedStockTickers = []
+        
+        faangStocks.forEach { ticker in
+            loadMostOwnedStocksData(for: ticker)
+        }
+        
+        mostOwnedStocks.forEach { ticker in
+            loadFAANGStocksData(for: ticker)
         }
     }
     
-    public func loadPopularPairsData(for currencyFrom: String, for currencyTo: String) {
-        CurrencyDataService.getForexPairResults(for: currencyFrom, for: currencyTo).sink { completion in
-            switch completion {
-            case .failure(let error):
-                print(error)
-                return
-                //handle this later on
-            case .finished:
-                return
-            }
-        } receiveValue: { forexData in
-            DispatchQueue.main.async {
-                self.forexPairs.append(forexData)
-            }
-        }.store(in: &cancellable)
-    }
-    
-    func loadPopularStocks() {
-        popularStocks.forEach { ticker in
-            loadPopularStocksData(for: ticker)
-        }
-    }
-    
-    public func loadPopularStocksData(for stockTicker: String) {
-        DataService.getDataFromStockAPI(for: stockTicker).sink { completion in
+    public func loadMostOwnedStocksData(for ticker: String) {
+        DataService.getDataFromStockAPI(for: ticker).sink { completion in
             switch completion {
             case .failure(let error):
                 print(error)
@@ -87,7 +81,24 @@ final class StockViewModel: ObservableObject {
             }
         } receiveValue: { stockData in
             DispatchQueue.main.async {
-                self.popularStockTickers.append(stockData)
+                self.mostOwnedStockTickers.append(stockData)
+            }
+        }.store(in: &cancellable)
+    }
+    
+    public func loadFAANGStocksData(for ticker: String) {
+        DataService.getDataFromStockAPI(for: ticker).sink { completion in
+            switch completion {
+            case .failure(let error):
+                print(error)
+                return
+                //handle this later on
+            case .finished:
+                return
+            }
+        } receiveValue: { stockData in
+            DispatchQueue.main.async {
+                self.faangStockTickers.append(stockData)
             }
         }.store(in: &cancellable)
     }
