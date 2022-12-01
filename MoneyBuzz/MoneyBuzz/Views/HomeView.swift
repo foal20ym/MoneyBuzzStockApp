@@ -30,7 +30,7 @@ struct HomeView: View {
                             .frame(width: 150, height: 50)
                         
                         VStack{
-                            Text(stock.latestClose)
+                            Text("\(Float(stock.latestClose)!, specifier: "%.2f")")
                             Text("Change")
                         }
                     }
@@ -55,7 +55,7 @@ struct HomeView: View {
                             .frame(width: 150, height: 50)
                         
                         VStack{
-                            Text(stock.latestClose)
+                            Text("\(Float(stock.latestClose)!, specifier: "%.2f")")
                             Text("Change")
                         }
                     }

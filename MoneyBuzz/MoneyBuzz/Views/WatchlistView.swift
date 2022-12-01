@@ -56,26 +56,23 @@ struct WatchlistView: View {
                 List {
                     if !stockModel.stocks.isEmpty {
                         ForEach(stockModel.stocks) { stock in
-                            HStack {
-                                Text("\(stock.metaData.symbol)")
-                                
-                                Spacer()
-                                
-                                LineChart(values: stock.closeValues)
-                                    .fill( LinearGradient(
-                                        gradient: Gradient(colors: [.green.opacity(0.7), .green.opacity(0.2), .green.opacity(0)]),
-                                        startPoint: .top,
-                                        endPoint: .bottom
-                                    )
-                                    )
-                                    .frame(width: 150, height: 50)
-                                
-                                VStack{
-                                    Text("\(stock.latestClose) ")
-                                    Text("Change")
+                            NavigationLink(destination: IndividualStockView( stock: stock)) {
+                                HStack {
+                                    Text("\(stock.metaData.symbol)")
+                                    
+                                    Spacer()
+                                    
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .frame(width: 150)
+                                    
+                                    VStack{
+                                        Text("\(Float(stock.latestClose)!, specifier: "%2.f")")
+                                        Text("Change")
+                                    }
                                 }
+                                .background(Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803))
                             }
-                            .background(Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803))
+                            
                         }
                         .onDelete(perform: stockModel.deleteStockFromWatchlist(at:))
                     } else {
@@ -95,13 +92,14 @@ struct WatchlistView_Previews: PreviewProvider {
 }
 /*
  HStack {
- TextField("Ticker:", text: $stockModel.stockTicker)
- .textFieldStyle(RoundedBorderTextFieldStyle())
- 
- Button(action: stockModel.addStockToWatchlist) {
- Label("", systemImage: "plus")
- }
- .disabled(!stockModel.isTickerValid)
- .foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
+     TextField("Ticker:", text: $stockModel.stockTicker)
+         .textFieldStyle(RoundedBorderTextFieldStyle())
+     
+     Button(action: stockModel.addStockToWatchlist) {
+         Label("", systemImage: "plus")
+     }
+     .disabled(!stockModel.isTickerValid)
+     .foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
  }
  */
+

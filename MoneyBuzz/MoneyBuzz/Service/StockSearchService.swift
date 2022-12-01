@@ -11,7 +11,7 @@ import Combine
 
 struct StockSearchService {
     static func getSearchResults(for searchString: String) -> AnyPublisher<StockSearchData, Error> {
-        let url = URL(string: "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=\(searchString)&apikey=LO58U5WZML3IIJNW")!
+        let url = URL(string: "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=\(searchString)&apikey=SEDPQH2JNID6PTUC")!
             
         return URLSession.shared.dataTaskPublisher(for: url).tryMap { element -> Data in
             guard let httpResponse = element.response as? HTTPURLResponse, httpResponse.statusCode < 400 else {
