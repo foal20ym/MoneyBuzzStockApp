@@ -61,8 +61,14 @@ struct WatchlistView: View {
                                 
                                 Spacer()
                                 
-                                RoundedRectangle(cornerRadius: 10)
-                                    .frame(width: 150)
+                                LineChart(values: stock.closeValues)
+                                    .fill( LinearGradient(
+                                        gradient: Gradient(colors: [.green.opacity(0.7), .green.opacity(0.2), .green.opacity(0)]),
+                                        startPoint: .top,
+                                        endPoint: .bottom
+                                    )
+                                    )
+                                    .frame(width: 150, height: 50)
                                 
                                 VStack{
                                     Text("\(stock.latestClose) ")
@@ -89,13 +95,13 @@ struct WatchlistView_Previews: PreviewProvider {
 }
 /*
  HStack {
-     TextField("Ticker:", text: $stockModel.stockTicker)
-         .textFieldStyle(RoundedBorderTextFieldStyle())
-     
-     Button(action: stockModel.addStockToWatchlist) {
-         Label("", systemImage: "plus")
-     }
-     .disabled(!stockModel.isTickerValid)
-     .foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
+ TextField("Ticker:", text: $stockModel.stockTicker)
+ .textFieldStyle(RoundedBorderTextFieldStyle())
+ 
+ Button(action: stockModel.addStockToWatchlist) {
+ Label("", systemImage: "plus")
+ }
+ .disabled(!stockModel.isTickerValid)
+ .foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
  }
  */
