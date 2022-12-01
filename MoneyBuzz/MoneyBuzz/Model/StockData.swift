@@ -49,6 +49,26 @@ struct StockData: Codable, Identifiable {
     var latestClose: String {
         timeSeries5min.first?.value.close ?? "NaN"
     }
+    
+    var latestOpen: String {
+        timeSeries5min.first?.value.open ?? "NaN"
+    }
+    
+    var latestHigh: String {
+        timeSeries5min.first?.value.high ?? "NaN"
+    }
+    
+    var latestLow: String {
+        timeSeries5min.first?.value.low ?? "NaN"
+    }
+    
+    var latestVolume: String {
+        timeSeries5min.first?.value.volume ?? "NaN"
+        
+    }
+    
+    
+    
     var closeValues: [Double] {
         let rawValues = timeSeries5min.values.map { Double($0.close)! }
         let max = rawValues.max()!
@@ -56,6 +76,11 @@ struct StockData: Codable, Identifiable {
         
         return rawValues.map { ($0 - min * 0.95) / (max - min * 0.95) }
     }
+    
+    var graphDataPoints: [CGFloat] {
+        return timeSeries5min.values.map{ CGFloat(Double($0.close)!) }
+    }
+    
     
     private enum CodingKeys: String, CodingKey {
         case metaData = "Meta Data"
