@@ -20,21 +20,22 @@ struct LoginView: View {
     @ObservedObject private var loginViewViewModel = LoginViewViewModel()
     
     var body: some View {
-        // loginViewViewModel.isLoggedIn
-        if userIsLoggedIn {
-            loggedin // This will be replaced by the AccountView later.
+        
+        if loginViewViewModel.isLoggedIn {
+            //loggedin  This will be replaced by the AccountView later.
+            AccountView()
         } else {
             content
         }
     }
     
-    var loggedin: some View {
+    /*var loggedin: some View {
         
         Button {
             loginViewViewModel.signout()
-            userIsLoggedIn = false
+            //userIsLoggedIn = false
+            loginViewViewModel.isLoggedIn = false
             
-            //loginViewViewModel.isLoggedIn = false
         } label: {
             Text("Sign out!")
                 .bold()
@@ -47,7 +48,7 @@ struct LoginView: View {
         .padding(.top)
         .offset(y: 110)
         
-    }
+    }*/
     
     var content: some View {
         NavigationStack {
@@ -70,6 +71,7 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .textFieldStyle(.plain)
                         .disableAutocorrection(true)
+                        .autocapitalization(.none)
                         .placeholder(when: email.isEmpty) {
                             Text("Email")
                                 .foregroundColor(.white)
@@ -112,8 +114,11 @@ struct LoginView: View {
                     } label: {
                         Text("Already have an an account? Login")
                             .bold()
-                            .foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
-                            .underline()
+                            .frame(width: 310, height: 40)
+                            .background(RoundedRectangle(cornerRadius: 30, style: .continuous)
+                                .foregroundStyle(.linearGradient(colors: [Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235),Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235)], startPoint: .topLeading, endPoint: .bottomTrailing))
+                            )
+                            .foregroundColor(.white)
                     }
                     .padding(.top)
                     .offset(y: 110)
@@ -123,8 +128,8 @@ struct LoginView: View {
                 .onAppear {
                     Auth.auth().addStateDidChangeListener { auth, user in
                         if user != nil {
-                            userIsLoggedIn.toggle()
-                            //loginViewViewModel.isLoggedIn.toggle()
+                            //userIsLoggedIn.toggle()
+                            loginViewViewModel.isLoggedIn.toggle()
                         }
                     }
                 }
