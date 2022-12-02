@@ -10,6 +10,8 @@
 		154A0D4E292E5EC5000EA6F9 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154A0D4D292E5EC5000EA6F9 /* WatchlistView.swift */; };
 		157C5726292D210100E0957A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C5725292D210100E0957A /* HomeView.swift */; };
 		157E4157292C08FA00522665 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157E4156292C08FA00522665 /* StockData.swift */; };
+		158D89EF2939E67D0071D276 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D89EE2939E67D0071D276 /* LoginView.swift */; };
+		158D89F12939E6CC0071D276 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D89F02939E6CC0071D276 /* LoginViewViewModel.swift */; };
 		15E25D782937A70200F4F4C6 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E25D772937A70200F4F4C6 /* LineChart.swift */; };
 		15E25D7B2938F92200F4F4C6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 15E25D7A2938F92200F4F4C6 /* FirebaseAuth */; };
 		15E25D7D2938F92200F4F4C6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 15E25D7C2938F92200F4F4C6 /* FirebaseFirestore */; };
@@ -64,6 +66,8 @@
 		154A0D4D292E5EC5000EA6F9 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 		157C5725292D210100E0957A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		157E4156292C08FA00522665 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockData.swift; path = MoneyBuzz/Model/StockData.swift; sourceTree = SOURCE_ROOT; };
+		158D89EE2939E67D0071D276 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		158D89F02939E6CC0071D276 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
 		15E25D772937A70200F4F4C6 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		15E25D7E2938F99E00F4F4C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		15FAFE3629313240008C4670 /* StockSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSearchViewModel.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				780948E629391171005C2A63 /* GraphCharView.swift */,
 				780948E8293911AC005C2A63 /* IndividualStockView.swift */,
 				780948EC2939247F005C2A63 /* SheetView.swift */,
+				158D89EE2939E67D0071D276 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				78EDD50A292EF5C2005B56A2 /* NewsDataViewModel.swift */,
 				15FAFE3629313240008C4670 /* StockSearchViewModel.swift */,
 				780948EA29391542005C2A63 /* CompanyOverviewViewModel.swift */,
+				158D89F02939E6CC0071D276 /* LoginViewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -379,12 +385,14 @@
 				15FAFE44293508F1008C4670 /* CurrencyData.swift in Sources */,
 				78ACCF31292BE11D00528FDE /* Persistence.swift in Sources */,
 				780948E52939109E005C2A63 /* CompanyOverviewDataService.swift in Sources */,
+				158D89F12939E6CC0071D276 /* LoginViewViewModel.swift in Sources */,
 				157C5726292D210100E0957A /* HomeView.swift in Sources */,
 				780948E729391171005C2A63 /* GraphCharView.swift in Sources */,
 				78ACCF34292BE11D00528FDE /* MoneyBuzz.xcdatamodeld in Sources */,
 				157E4157292C08FA00522665 /* StockData.swift in Sources */,
 				78EDD507292EE9AB005B56A2 /* NewsData.swift in Sources */,
 				15FAFE392931326C008C4670 /* StockSearchData.swift in Sources */,
+				158D89EF2939E67D0071D276 /* LoginView.swift in Sources */,
 				15E25D782937A70200F4F4C6 /* LineChart.swift in Sources */,
 				15FAFE3729313240008C4670 /* StockSearchViewModel.swift in Sources */,
 				780948ED2939247F005C2A63 /* SheetView.swift in Sources */,
