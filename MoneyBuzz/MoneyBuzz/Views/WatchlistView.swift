@@ -24,16 +24,7 @@ struct WatchlistView: View {
                     ForEach(stockSearchModel.searchResults) { results in
                         HStack {
                             Text("\(results.bestMatches[0].symbol)")
-                            
-                            Spacer()
-                            
-                            RoundedRectangle(cornerRadius: 10)
-                                .frame(width: 150)
-                            
-                            VStack{
-                                Text("\(results.bestMatches[0].currency) ")
-                                Text("Change")
-                            }
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
                         }
                     }
                     .onTapGesture {
@@ -42,6 +33,7 @@ struct WatchlistView: View {
                     }
                 }
                 .searchable(text: $searchTicker)
+                .autocapitalization(.none)
                 .onChange(of: searchTicker, perform: { searchText in
                     
                     if !searchText.isEmpty {
@@ -62,17 +54,20 @@ struct WatchlistView: View {
                                     
                                     Spacer()
                                     
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .frame(width: 150)
+                                    LineChart(values: stock.closeValues)
+                                        .fill( LinearGradient(
+                                            gradient: Gradient(colors: [.green.opacity(0.7), .green.opacity(0.2), .green.opacity(0)]),
+                                            startPoint: .top,
+                                            endPoint: .bottom
+                                        )
+                                        )
+                                        .frame(width: 150, height: 50)
                                     
                                     VStack{
                                         Text("\(Float(stock.latestClose)!, specifier: "%2.f")")
-                                        Text("Change")
                                     }
                                 }
-                                .background(Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803))
                             }
-                            
                         }
                         .onDelete(perform: stockModel.deleteStockFromWatchlist(at:))
                     } else {

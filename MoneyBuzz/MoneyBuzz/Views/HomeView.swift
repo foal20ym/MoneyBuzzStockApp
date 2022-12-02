@@ -34,7 +34,6 @@ struct HomeView: View {
                             Text("Change")
                         }
                     }
-                    .background(Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803))
                 }
             }
             List {
@@ -59,7 +58,7 @@ struct HomeView: View {
                             Text("Change")
                         }
                     }
-                    .background(Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803))
+                    //.background(Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803))
                 }
             }
         }
