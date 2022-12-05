@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		154A0D4E292E5EC5000EA6F9 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154A0D4D292E5EC5000EA6F9 /* WatchlistView.swift */; };
+		15556E16293E3D4D004B7D75 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15556E15293E3D4D004B7D75 /* ViewModifiers.swift */; };
 		157C5726292D210100E0957A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C5725292D210100E0957A /* HomeView.swift */; };
 		157E4157292C08FA00522665 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157E4156292C08FA00522665 /* StockData.swift */; };
 		158D89EF2939E67D0071D276 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D89EE2939E67D0071D276 /* LoginView.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		151C054D292CCBE200FC5D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		154A0D4D292E5EC5000EA6F9 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
+		15556E15293E3D4D004B7D75 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		157C5725292D210100E0957A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		157E4156292C08FA00522665 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockData.swift; path = MoneyBuzz/Model/StockData.swift; sourceTree = SOURCE_ROOT; };
 		158D89EE2939E67D0071D276 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15556E12293E3BEB004B7D75 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				15556E15293E3D4D004B7D75 /* ViewModifiers.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 		78ACCF1B292BE11B00528FDE = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 		78ACCF26292BE11B00528FDE /* MoneyBuzz */ = {
 			isa = PBXGroup;
 			children = (
+				15556E12293E3BEB004B7D75 /* ViewModifiers */,
 				78EDD505292D2F4D005B56A2 /* ViewModel */,
 				78EDD4FD292D1C44005B56A2 /* Model */,
 				151C054D292CCBE200FC5D14 /* Info.plist */,
@@ -385,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				780948E329391045005C2A63 /* CompanyOverviewData.swift in Sources */,
+				15556E16293E3D4D004B7D75 /* ViewModifiers.swift in Sources */,
 				15FAFE44293508F1008C4670 /* CurrencyData.swift in Sources */,
 				78ACCF31292BE11D00528FDE /* Persistence.swift in Sources */,
 				780948E52939109E005C2A63 /* CompanyOverviewDataService.swift in Sources */,
@@ -570,7 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MoneyBuzz/Preview Content\"";
-				DEVELOPMENT_TEAM = S9RZ9K6S84;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoneyBuzz/Info.plist;
@@ -599,7 +611,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MoneyBuzz/Preview Content\"";
-				DEVELOPMENT_TEAM = S9RZ9K6S84;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoneyBuzz/Info.plist;

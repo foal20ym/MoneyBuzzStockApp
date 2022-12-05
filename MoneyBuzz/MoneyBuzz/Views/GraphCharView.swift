@@ -8,20 +8,15 @@
 import SwiftUI
 
 // In call make sure to convert the values to normalized
-
 struct GraphChartShape: Shape {
-    
     var graphDataPoints: [CGFloat]
     func path(in rect: CGRect) -> Path {
-        
         func makeGraphPoint(at ix: Int) -> CGPoint {
             let graphPoint = graphDataPoints[ix]
             let x = rect.width * CGFloat(ix) / CGFloat(graphDataPoints.count - 1)
             let y = (1-graphPoint) * rect.height
-            
             return CGPoint(x: x, y: y)
         }
-        
         return Path { path in
             guard graphDataPoints.count > 1 else {
                 return
@@ -33,10 +28,7 @@ struct GraphChartShape: Shape {
                 path.addLine(to: makeGraphPoint(at: ix))
             }
         }
-        
     }
-    
-    
 }
 
 struct GraphCharView: View {
