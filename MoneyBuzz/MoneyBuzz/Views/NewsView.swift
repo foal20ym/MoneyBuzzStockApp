@@ -4,9 +4,7 @@
 //
 //  Created by Consid  on 2022-11-24.
 //
-
 import SwiftUI
-
 struct NewsView: View {
     @ObservedObject var viewModel = NewsDataViewModel()
     @State private var showSheet = false
@@ -24,11 +22,9 @@ struct NewsView: View {
                 .navigationTitle("News")
         }
     }
-    
     func displayNews(ix: Int) -> some View {
         VStack {
             ForEach(viewModel.news) { element in
-                
                 HStack {
                     Text("\(element.data[ix].title)")
                         .font(.title3)
@@ -40,11 +36,8 @@ struct NewsView: View {
                 }
                 .sheet(isPresented: $showSheet) {
                     SheetView(selectedTitle: $selectedModel)
-                    
                 }
                 .foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
-                
-                
                 VStack {
                     HStack {
                         Text("\(element.data[ix].source)")
@@ -52,18 +45,12 @@ struct NewsView: View {
                         Text(viewModel.dateConverter(rawDate: element.data[ix].published_at))
                     }
                     .padding(.bottom, 15.0)
-                    
-                    
-                    
                     .foregroundColor(Color(red: 0.6705882352941176, green: 0.6705882352941176, blue: 0.6705882352941176))
                     .padding(.top, 3.0)
                 }
             }
-            
         }
     }
-    
-    
 }
 
 struct NewsView_Previews: PreviewProvider {
