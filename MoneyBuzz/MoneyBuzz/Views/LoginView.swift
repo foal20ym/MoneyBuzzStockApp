@@ -7,14 +7,16 @@
 import SwiftUI
 import CoreData
 import Firebase
-// DO NOT ADD A NEW ACCOUNTS EACH TIME YOU RUN THE APP
+
 // Test@gmail.com
 // Testgmail
+
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var userIsLoggedIn = false
     @ObservedObject public var loginViewViewModel = LoginViewViewModel()
+    
     var body: some View {
         if loginViewViewModel.isLoggedIn {
             AccountView()

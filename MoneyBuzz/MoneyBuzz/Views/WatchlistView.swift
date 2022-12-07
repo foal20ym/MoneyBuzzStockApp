@@ -52,7 +52,6 @@ struct WatchlistView: View {
             }
         }
         .onAppear {
-            
             stockModel.loadFromCoreData()
         }
     }

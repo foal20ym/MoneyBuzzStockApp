@@ -14,6 +14,9 @@
 		158D89EF2939E67D0071D276 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D89EE2939E67D0071D276 /* LoginView.swift */; };
 		158D89F12939E6CC0071D276 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D89F02939E6CC0071D276 /* LoginViewViewModel.swift */; };
 		158D89F3293A190C0071D276 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D89F2293A190C0071D276 /* AccountView.swift */; };
+		15A0573929411BEB0036DAF4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 15A0573829411BEB0036DAF4 /* FirebaseAuth */; };
+		15A0573B29411BF00036DAF4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 15A0573A29411BF00036DAF4 /* FirebaseFirestore */; };
+		15A0573D29411DCA0036DAF4 /* UnitTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0573C29411DCA0036DAF4 /* UnitTestViewModel.swift */; };
 		15E25D782937A70200F4F4C6 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E25D772937A70200F4F4C6 /* LineChart.swift */; };
 		15E25D7B2938F92200F4F4C6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 15E25D7A2938F92200F4F4C6 /* FirebaseAuth */; };
 		15E25D7D2938F92200F4F4C6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 15E25D7C2938F92200F4F4C6 /* FirebaseFirestore */; };
@@ -73,6 +76,7 @@
 		158D89EE2939E67D0071D276 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		158D89F02939E6CC0071D276 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
 		158D89F2293A190C0071D276 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		15A0573C29411DCA0036DAF4 /* UnitTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestViewModel.swift; sourceTree = "<group>"; };
 		15E25D772937A70200F4F4C6 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		15E25D7E2938F99E00F4F4C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		15FAFE3629313240008C4670 /* StockSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSearchViewModel.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A0573929411BEB0036DAF4 /* FirebaseAuth in Frameworks */,
+				15A0573B29411BF00036DAF4 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +148,13 @@
 			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
+		15A0573729411BEB0036DAF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		78ACCF1B292BE11B00528FDE = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 				78ACCF3C292BE11E00528FDE /* MoneyBuzzTests */,
 				78ACCF46292BE11E00528FDE /* MoneyBuzzUITests */,
 				78ACCF25292BE11B00528FDE /* Products */,
+				15A0573729411BEB0036DAF4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -256,6 +270,7 @@
 				15FAFE3629313240008C4670 /* StockSearchViewModel.swift */,
 				780948EA29391542005C2A63 /* CompanyOverviewViewModel.swift */,
 				158D89F02939E6CC0071D276 /* LoginViewViewModel.swift */,
+				15A0573C29411DCA0036DAF4 /* UnitTestViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -274,6 +289,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				15A0573229411BD90036DAF4 /* PBXTargetDependency */,
+				15A0573029411BD30036DAF4 /* PBXTargetDependency */,
 			);
 			name = MoneyBuzz;
 			packageProductDependencies = (
@@ -295,9 +312,15 @@
 			buildRules = (
 			);
 			dependencies = (
+				15A0573629411BE40036DAF4 /* PBXTargetDependency */,
+				15A0573429411BE00036DAF4 /* PBXTargetDependency */,
 				78ACCF3B292BE11E00528FDE /* PBXTargetDependency */,
 			);
 			name = MoneyBuzzTests;
+			packageProductDependencies = (
+				15A0573829411BEB0036DAF4 /* FirebaseAuth */,
+				15A0573A29411BF00036DAF4 /* FirebaseFirestore */,
+			);
 			productName = MoneyBuzzTests;
 			productReference = 78ACCF39292BE11E00528FDE /* MoneyBuzzTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -423,6 +446,7 @@
 				15FAFE42293508C1008C4670 /* CurrencyDataService.swift in Sources */,
 				780948E9293911AC005C2A63 /* IndividualStockView.swift in Sources */,
 				78ACCF28292BE11B00528FDE /* MoneyBuzzApp.swift in Sources */,
+				15A0573D29411DCA0036DAF4 /* UnitTestViewModel.swift in Sources */,
 				780948EB29391542005C2A63 /* CompanyOverviewViewModel.swift in Sources */,
 				78EDD50B292EF5C2005B56A2 /* NewsDataViewModel.swift in Sources */,
 				154A0D4E292E5EC5000EA6F9 /* WatchlistView.swift in Sources */,
@@ -451,6 +475,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		15A0573029411BD30036DAF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 15A0572F29411BD30036DAF4 /* FirebaseAuth */;
+		};
+		15A0573229411BD90036DAF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 15A0573129411BD90036DAF4 /* FirebaseFirestore */;
+		};
+		15A0573429411BE00036DAF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 15A0573329411BE00036DAF4 /* FirebaseAuth */;
+		};
+		15A0573629411BE40036DAF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 15A0573529411BE40036DAF4 /* FirebaseFirestore */;
+		};
 		78ACCF3B292BE11E00528FDE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 78ACCF23292BE11B00528FDE /* MoneyBuzz */;
@@ -765,6 +805,36 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		15A0572F29411BD30036DAF4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15E25D792938F92200F4F4C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		15A0573129411BD90036DAF4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15E25D792938F92200F4F4C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		15A0573329411BE00036DAF4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15E25D792938F92200F4F4C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		15A0573529411BE40036DAF4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15E25D792938F92200F4F4C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		15A0573829411BEB0036DAF4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15E25D792938F92200F4F4C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		15A0573A29411BF00036DAF4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15E25D792938F92200F4F4C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		15E25D7A2938F92200F4F4C6 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 15E25D792938F92200F4F4C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

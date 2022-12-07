@@ -131,6 +131,16 @@ final class StockViewModel: ObservableObject {
             .store(in: &cancellable)
     }
     
+    func validateTickerUnitTest(ticker: String) -> Bool {
+        guard ticker.count <= 4 else { return false }
+        guard !ticker.isEmpty else { return false }
+        let numberRegEx  = ".*[0-9]+.*"
+        let texttest1 = NSPredicate(format:"SELF MATCHES %@", numberRegEx)
+        guard !texttest1.evaluate(with: ticker) else { return false }
+        
+        return true
+    }
+    
     func addStockToWatchlist() {
         let newStock = StockEntity(context: context)
         newStock.ticker = stockTicker
