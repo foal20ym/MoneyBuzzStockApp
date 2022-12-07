@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 struct AccountView: View {
-    @ObservedObject public var loginViewViewModel = LoginViewViewModel()
+    @ObservedObject private var loginViewViewModel = LoginViewViewModel()
     @State private var isLoggedIn = true
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color(red: 0.3703474402, green: 0.8287841678, blue: 0.747587502))]
@@ -33,13 +33,12 @@ struct AccountView: View {
             Button {
                 loginViewViewModel.signout()
                 isLoggedIn = false
-                LoginViewViewModel.userID = ""
                 
             } label: {
                 Text("Sign out!").loginViewModifier()
             }.padding(.top).offset(y: 110)
         }
-        .navigationTitle("Account").frame(alignment: .center)
+        .navigationTitle("Account info").frame(alignment: .center)
     }
 }
 

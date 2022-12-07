@@ -14,7 +14,7 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var userIsLoggedIn = false
-    @ObservedObject public var loginViewViewModel = LoginViewViewModel()
+    @ObservedObject private var loginViewViewModel = LoginViewViewModel()
     var body: some View {
         if loginViewViewModel.isLoggedIn {
             AccountView()
@@ -22,7 +22,6 @@ struct LoginView: View {
             content
         }
     }
-    
     var content: some View {
         NavigationStack {
             ZStack {
@@ -39,17 +38,11 @@ struct LoginView: View {
                     } label: {
                         Text("Sign in").loginViewModifier()
                     }.padding(.top).offset(y: 110)
-                        .alert("\(loginViewViewModel.authErrorDescription)", isPresented: $loginViewViewModel.isAuthError) {
-                            Button("OK", role: .cancel) { }
-                        }
                     Button {
                         loginViewViewModel.register(email: email, password: password)
                     } label: {
                         Text("Don't have an account? Sign up!").loginViewModifier()
                     }.padding(.top).offset(y: 110)
-                        .alert("\(loginViewViewModel.authErrorDescription)", isPresented: $loginViewViewModel.isAuthError) {
-                            Button("OK", role: .cancel) { }
-                        }
                 }.frame(width: 350).onAppear {
                     Auth.auth().addStateDidChangeListener { auth, user in
                         if user != nil {

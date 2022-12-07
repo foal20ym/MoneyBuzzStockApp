@@ -30,7 +30,6 @@ struct NewsView: View {
                         .font(.title3)
                     Spacer()
                 }
-                
                 .onTapGesture {
                     selectedModel = SheetModel(title: "\(element.data[ix].title)", description: "\(element.data[ix].description)")
                     showSheet.toggle()
@@ -48,7 +47,6 @@ struct NewsView: View {
                     .padding(.bottom, 15.0)
                     .foregroundColor(Color(red: 0.6705882352941176, green: 0.6705882352941176, blue: 0.6705882352941176))
                     .padding(.top, 3.0)
-                    Divider()
                 }
             }
         }

@@ -16,11 +16,9 @@ struct HomeView: View {
                         ForEach(model.faangStockTickers) { stock in
                             HStack {
                                 Text(stock.metaData.symbol)
-                                    .foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
                                 Spacer()
                                 LineChart(values: stock.closeValues).fill( LinearGradient(gradient: Gradient(colors: [.green.opacity(0.7), .green.opacity(0.2), .green.opacity(0)]),startPoint: .top,endPoint: .bottom)).frame(width: 150, height: 50)
                                 Text("\(Float(stock.latestClose)!, specifier: "%.2f")")
-                                    .foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
                             }
                         }
                     }
@@ -31,11 +29,9 @@ struct HomeView: View {
                         ForEach(model.mostOwnedStockTickers) { stock in
                             HStack {
                                 Text(stock.metaData.symbol)
-                                    .foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
                                 Spacer()
                                 LineChart(values: stock.closeValues).fill( LinearGradient(gradient: Gradient(colors: [.green.opacity(0.7), .green.opacity(0.2), .green.opacity(0)]),startPoint: .top,endPoint: .bottom)).frame(width: 150, height: 50)
                                 Text("\(Float(stock.latestClose)!, specifier: "%.2f")")
-                                    .foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
                             }
                         }
                     }
