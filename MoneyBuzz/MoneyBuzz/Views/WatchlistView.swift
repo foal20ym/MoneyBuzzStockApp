@@ -8,6 +8,7 @@ import SwiftUI
 struct WatchlistView: View {
     @ObservedObject private var stockModel = StockViewModel()
     @ObservedObject private var stockSearchModel = StockSearchViewModel()
+    @ObservedObject private var loginViewModel = LoginViewViewModel()
     @State private var searchTicker = ""
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color(red: 0.3703474402, green: 0.8287841678, blue: 0.747587502))]
@@ -17,8 +18,7 @@ struct WatchlistView: View {
             VStack {
                 List {
                     ForEach(stockSearchModel.searchResults) { results in
-                            Text("\(results.bestMatches[0].symbol)")
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        Text("\(results.bestMatches[0].symbol)")
                     }.onTapGesture {
                         stockModel.stockTicker = searchTicker
                         stockModel.addStockToWatchlist()
@@ -30,23 +30,30 @@ struct WatchlistView: View {
                         stockSearchModel.searchResults = []
                     }
                 }).navigationTitle("Watchlist")
-                List {
-                    if !stockModel.stocks.isEmpty {
-                        ForEach(stockModel.stocks) { stock in
-                            NavigationLink(destination: IndividualStockView( stock: stock)) {
-                                HStack {
-                                    Text("\(stock.metaData.symbol)")
-                                    Spacer()
-                                    LineChart(values: stock.closeValues).fill( LinearGradient(gradient: Gradient(colors: [.green.opacity(0.7),.green.opacity(0.2),.green.opacity(0)]),startPoint: .top,endPoint: .bottom)).frame(width: 150, height: 50)
-                                        Text("\(Float(stock.latestClose)!, specifier: "%2.f")")
-                                }
-                            }
-                        }.onDelete(perform: stockModel.deleteStockFromWatchlist(at:))
-                    } else {
-                        Text("Your watchlist is empty!").font(.title).foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
+                    List {
+                        if !stockModel.stocks.isEmpty {
+                                ForEach(stockModel.stocks) { stock in
+                                    NavigationLink(destination: IndividualStockView( stock: stock)) {
+                                        
+                                        HStack {
+                                            Text("\(stock.metaData.symbol)").foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
+                                            Spacer()
+                                            LineChart(values: stock.closeValues).fill( LinearGradient(gradient: Gradient(colors: [.green.opacity(0.7),.green.opacity(0.2),.green.opacity(0)]),startPoint: .top,endPoint: .bottom)).frame(width: 150, height: 50)
+                                            Text("\(Float(stock.latestClose)!, specifier: "%.2f")").foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
+                                        }
+                                    }
+                                }.onDelete(perform: stockModel.deleteStockFromWatchlist(at:))
+                        } else {
+                            Text("Your watchlist is empty!").font(.title).foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
+                        }
                     }
-                }.scrollContentBackground(.hidden)
+                    .frame(width: 400, height: 470)
+                    .scrollContentBackground(.hidden)
             }
+        }
+        .onAppear {
+            
+            stockModel.loadFromCoreData()
         }
     }
 }

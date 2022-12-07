@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @ObservedObject var loginViewModel = LoginViewViewModel()
     init() {
         UITabBar.appearance().backgroundColor = UIColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
         UITabBar.appearance().unselectedItemTintColor = UIColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
@@ -26,12 +27,13 @@ struct ContentView: View {
                     Image(systemName: "house")
                     Text("Home")
                 }
+                
+                WatchlistView()
+                    .tabItem() {
+                        Image(systemName: "list.clipboard")
+                        Text("Watchlist")
+                    }
             
-            WatchlistView()
-                .tabItem() {
-                    Image(systemName: "list.clipboard")
-                    Text("Watchlist")
-                }
             NewsView()
                 .tabItem() {
                     Image(systemName: "newspaper.fill")

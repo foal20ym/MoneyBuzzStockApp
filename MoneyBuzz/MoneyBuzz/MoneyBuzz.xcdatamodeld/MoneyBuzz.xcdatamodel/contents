@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="21G217" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="StockEntity" representedClassName="StockEntity" syncable="YES" codeGenerationType="class">
         <attribute name="ticker" attributeType="String" defaultValueString="TSLA"/>
+        <attribute name="userID" attributeType="String"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="stocks" inverseEntity="UserEntity"/>
+    </entity>
+    <entity name="UserEntity" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="userID" attributeType="String"/>
+        <relationship name="stocks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StockEntity" inverseName="user" inverseEntity="StockEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="userID"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
 </model>
