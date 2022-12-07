@@ -16,13 +16,12 @@ struct IndividualStockView: View {
                 VStack {
                     HStack {
                         Text(companyDataViewModel.ticker)
-                        
                             .font(.title)
                             .bold()
-                            .padding([.top, .leading], 30.0)
+                            .padding(.leading, 20)
                             .foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
                         Text(companyDataViewModel.name)
-                            .padding(.top, 35.0)
+                            .padding(.top, 5.0)
                             .foregroundColor(Color(red: 0.6705882352941176, green: 0.6705882352941176, blue: 0.6705882352941176))
                         Spacer()
                     }
@@ -31,7 +30,7 @@ struct IndividualStockView: View {
                         HStack {
                             Text("\(Float(stock.latestClose)!, specifier: "%.2f")")
                                 .bold()
-                                .padding(.leading, 30.0)
+                                .padding(.leading, 20)
                             Spacer()
                         }
                         .foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
@@ -41,17 +40,17 @@ struct IndividualStockView: View {
                             Text(companyDataViewModel.currency)
                             Spacer()
                         }
-                        .padding(.leading, 30.0)
+                        .padding(.leading, 20)
                         .foregroundColor(Color(red: 0.6705882352941176, green: 0.6705882352941176, blue: 0.6705882352941176))
                         
                     }
                     Divider()
-                    //Text("Graph Placeholder")
-                      //  .frame(width: 400, height: 300)
                     GraphChartShape(graphDataPoints: companyDataViewModel.normalizeDataPointsForGraph(for: stock.graphDataPoints))
                         .stroke(lineWidth: 1.5)
                         .foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
-                        .frame(width: 385, height: 150)
+                        .frame(width: 393, height: 150)
+                        .padding()
+                        .shadow(radius: 2)
                     Divider()
                     HStack {
                         VStack(alignment: .listRowSeparatorLeading) {
@@ -66,7 +65,7 @@ struct IndividualStockView: View {
                             Text("Volume")
                         }
                         .foregroundColor(Color(red: 0.6705882352941176, green: 0.6705882352941176, blue: 0.6705882352941176))
-                        .padding(.leading, 30.0)
+                        .padding(.leading, 20)
                         VStack(alignment: .listRowSeparatorLeading) {
                             Text("\(Float(stock.latestOpen)!, specifier: "%.2f")")
                                 .padding(.bottom, 1.0)
@@ -90,6 +89,7 @@ struct IndividualStockView: View {
                     Text(companyDataViewModel.description)
                         .multilineTextAlignment(.leading)
                         .padding()
+                        .padding(.leading, 5.0)
                         .foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
                     Divider()
                 }

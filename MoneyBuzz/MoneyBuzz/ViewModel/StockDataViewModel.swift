@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CoreData
 
 final class StockViewModel: ObservableObject {
     private let context = PersistenceController.shared.container.viewContext
@@ -31,6 +32,7 @@ final class StockViewModel: ObservableObject {
     @Published var stockEntities: [StockEntity] = []
     @Published var faangStockTickers: [StockData] = []
     @Published var mostOwnedStockTickers: [StockData] = []
+    @Published var loginVm = LoginViewViewModel()
     
     
     public init() {
@@ -54,7 +56,7 @@ final class StockViewModel: ObservableObject {
             loadFAANGStocksData(for: ticker)
         }
     }
-
+    
     
     func loadStockLists() {
         faangStockTickers = []
@@ -104,8 +106,18 @@ final class StockViewModel: ObservableObject {
     }
     
     func loadFromCoreData() {
+        guard loginVm.isLoggedIn == true else {
+            return
+        }
+        let fetchRequest = NSFetchRequest<StockEntity>(entityName: "StockEntity")
+        fetchRequest.predicate = NSPredicate(format: "userID == %@", LoginViewViewModel.userID)
+        print("From stockDataViewModel \(LoginViewViewModel.userID)")
         do {
-            stockEntities = try context.fetch(StockEntity.fetchRequest())
+            stockEntities = try context.fetch(fetchRequest)
+            stocks = []
+            stockEntities.forEach { stockEntity in
+                loadStockData(for: stockEntity.ticker ?? "")
+            }
         } catch {
             print(error)
         }
@@ -122,11 +134,14 @@ final class StockViewModel: ObservableObject {
     func addStockToWatchlist() {
         let newStock = StockEntity(context: context)
         newStock.ticker = stockTicker
+        newStock.userID = LoginViewViewModel.userID
+        newStock.user = UserEntity(context: context)
+        newStock.user?.userID = LoginViewViewModel.userID
         
         do {
             try context.save()
         } catch {
-            print(error)
+            print("Error when adding to watchlist \(error)")
         }
         
         stockEntities.append(newStock)
@@ -143,6 +158,8 @@ final class StockViewModel: ObservableObject {
         
         stocks.remove(at: index)
         let stockToRemove = stockEntities.remove(at: index)
+        stockToRemove.user = UserEntity(context: context)
+        stockToRemove.user?.userID = LoginViewViewModel.userID
         
         context.delete(stockToRemove)
         

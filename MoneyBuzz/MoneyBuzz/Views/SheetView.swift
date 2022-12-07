@@ -19,10 +19,13 @@ struct SheetView: View {
         VStack(alignment: .listRowSeparatorLeading) {
             Text(selectedTitle.title)
                 .font(.largeTitle)
-                .padding()
+                .padding(.leading, 4)
+                .padding(.bottom, 12.0)
+                .multilineTextAlignment(.leading)
         }
-            Text(selectedTitle.description)
-                .padding(.horizontal, 12.0)
+        Text(selectedTitle.description)
+            .padding(.horizontal, 8.0)
+            .multilineTextAlignment(.leading)
     }
 }
 
