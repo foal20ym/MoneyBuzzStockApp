@@ -31,7 +31,7 @@ struct LoginView: View {
         NavigationStack {
             ZStack {
                 Color(red: 0.9215686274509803, green: 0.9215686274509803, blue: 0.9215686274509803)
-                RoundedRectangle(cornerRadius: 30, style: .continuous).foregroundStyle(.linearGradient(colors: [Color(red: 0.3176470588235294, green:0.8,blue: 0.6941176470588235), Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235)], startPoint: .topLeading,endPoint: .bottomTrailing)).frame(width: 1000, height: 400).rotationEffect(.degrees(135)).offset(y: -350)
+                    .loginViewBackgroundModifier()
                 VStack(spacing: 20) {
                     Text("Welcome").foregroundColor(.white).font(.system(size: 40, weight: .bold, design: .rounded)).offset(x: -100, y: -100)
                     TextField("",text:$email).foregroundColor(.white).textFieldStyle(.plain).disableAutocorrection(true).autocapitalization(.none).placeholder(when: email.isEmpty) {Text("Email").foregroundColor(.white).bold()}
@@ -41,7 +41,7 @@ struct LoginView: View {
                     Button {
                         loginViewViewModel.login(email: email, password: password)
                     } label: {
-                        Text("Sign in").loginViewModifier()
+                        Text("Sign in").loginViewButtonsModifier()
                     }.padding(.top).offset(y: 110)
                         .alert("\(loginViewViewModel.authErrorDescription)", isPresented: $loginViewViewModel.isAuthError) {
                             Button("OK", role: .cancel) { }
@@ -49,7 +49,7 @@ struct LoginView: View {
                     Button {
                         loginViewViewModel.register(email: email, password: password)
                     } label: {
-                        Text("Don't have an account? Sign up!").loginViewModifier()
+                        Text("Don't have an account? Sign up!").loginViewButtonsModifier()
                     }.padding(.top).offset(y: 110)
                         .alert("\(loginViewViewModel.authErrorDescription)", isPresented: $loginViewViewModel.isAuthError) {
                             Button("OK", role: .cancel) { }

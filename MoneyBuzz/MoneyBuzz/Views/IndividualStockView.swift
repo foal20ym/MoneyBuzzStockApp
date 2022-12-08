@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct IndividualStockView: View {
-    @ObservedObject  var companyDataViewModel = CompanyOverviewViewModel()
+    @ObservedObject var companyDataViewModel = CompanyOverviewViewModel()
     @State var stock: StockData
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             HStack {
@@ -93,7 +94,6 @@ struct IndividualStockView: View {
                         .foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
                     Divider()
                 }
-                
             }
             .onAppear {
                 companyDataViewModel.loadCompanyData(for: stock.metaData.symbol)

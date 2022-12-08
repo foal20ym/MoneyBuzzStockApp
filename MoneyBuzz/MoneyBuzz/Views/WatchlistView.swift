@@ -11,8 +11,8 @@ struct WatchlistView: View {
     @ObservedObject private var stockModel = StockViewModel()
     @ObservedObject private var stockSearchModel = StockSearchViewModel()
     @ObservedObject public var loginViewModel = LoginViewViewModel()
-    
     @State private var searchTicker = ""
+    
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color(red: 0.3703474402, green: 0.8287841678, blue: 0.747587502))]
     }
@@ -28,12 +28,13 @@ struct WatchlistView: View {
         .onAppear {
             Auth.auth().addStateDidChangeListener { auth, user in
                 if user != nil {
-                    loginViewModel.isLoggedIn.toggle()
+                    loginViewModel.isLoggedIn = true
+                } else {
+                    loginViewModel.isLoggedIn = false
                 }
             }
         }
     }
-    
     
     var content: some View {
         NavigationStack {
