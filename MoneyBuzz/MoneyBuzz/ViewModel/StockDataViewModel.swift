@@ -49,11 +49,11 @@ final class StockViewModel: ObservableObject {
         mostOwnedStockTickers = []
         
         faangStocks.forEach { ticker in
-            loadMostOwnedStocksData(for: ticker)
+            loadFAANGStocksData(for: ticker)
         }
         
         mostOwnedStocks.forEach { ticker in
-            loadFAANGStocksData(for: ticker)
+            loadMostOwnedStocksData(for: ticker)
         }
     }
     
@@ -129,6 +129,16 @@ final class StockViewModel: ObservableObject {
                 self.isTickerValid = !newValue.isEmpty
             }
             .store(in: &cancellable)
+    }
+    
+    func validateTickerUnitTest(ticker: String) -> Bool {
+        guard ticker.count <= 4 else { return false }
+        guard !ticker.isEmpty else { return false }
+        let numberRegEx  = ".*[0-9]+.*"
+        let texttest1 = NSPredicate(format:"SELF MATCHES %@", numberRegEx)
+        guard !texttest1.evaluate(with: ticker) else { return false }
+        
+        return true
     }
     
     func addStockToWatchlist() {

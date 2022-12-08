@@ -23,23 +23,30 @@ struct AccountView: View {
             }
         }
     }
+    
     var loggedin: some View {
         NavigationStack {
-            let user = Auth.auth().currentUser
-            let userEmail = Auth.auth().currentUser?.email
-            let userID = Auth.auth().currentUser?.uid
-            Text("Email: \(userEmail ?? "Firebase error; FatalError(connection)")")
-            Text("UserID: \(userID ?? "Firebase error; FatalError(connection)")")
-            Button {
-                loginViewViewModel.signout()
-                isLoggedIn = false
-                LoginViewViewModel.userID = ""
-                
-            } label: {
-                Text("Sign out!").loginViewModifier()
-            }.padding(.top).offset(y: 110)
+            ZStack {
+                Color(red: 0.3176470588235294, green:0.8,blue: 0.6941176470588235)
+                    .accountViewBackgroundModifier()
+                VStack {
+                    let user = Auth.auth().currentUser
+                    let userEmail = Auth.auth().currentUser?.email
+                    let userID = Auth.auth().currentUser?.uid
+                    Text("Email: \(userEmail ?? "Firebase error; FatalError(connection)")")
+                    Text("UserID: \(userID ?? "Firebase error; FatalError(connection)")")
+                    Button {
+                        loginViewViewModel.signout()
+                        isLoggedIn = false
+                        LoginViewViewModel.userID = ""
+                        
+                    } label: {
+                        Text("Sign out!").accountViewButtonsModifier()
+                    }.padding(.top).offset(y: 110)
+                }
+            }
+            .navigationTitle("Account").frame(alignment: .center)
         }
-        .navigationTitle("Account").frame(alignment: .center)
     }
 }
 

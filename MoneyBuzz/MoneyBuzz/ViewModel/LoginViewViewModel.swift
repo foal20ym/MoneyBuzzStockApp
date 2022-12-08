@@ -10,7 +10,7 @@ import Firebase
 import CoreData
 
 final class LoginViewViewModel: ObservableObject {
-    @Published var  isLoggedIn = false
+    @Published var isLoggedIn = false
     private let context = PersistenceController.shared.container.viewContext
     static var userID = ""
     private var email: [UserEntity] = []
@@ -78,5 +78,36 @@ final class LoginViewViewModel: ObservableObject {
             print("error when saving userID")
             print(error)
         }
+    }
+    
+    func validatePassword(password: String) -> Bool {
+        let capitalLetterRegEx  = ".*[A-Z]+.*"
+        let texttest = NSPredicate(format:"SELF MATCHES %@", capitalLetterRegEx)
+        guard texttest.evaluate(with: password) else { return false }
+        
+        let numberRegEx  = ".*[0-9]+.*"
+        let texttest1 = NSPredicate(format:"SELF MATCHES %@", numberRegEx)
+        guard texttest1.evaluate(with: password) else { return false }
+        
+        
+        return true
+    }
+    
+    func loginBool(email: String, password: String) -> Bool{
+        let containsAt = email.contains("@")
+        let validPassword = validatePassword(password: password)
+        
+        guard containsAt && validPassword else { return false }
+        
+        return true
+    }
+    
+    func registerBool(email: String, password: String) -> Bool{
+        let containsAt = email.contains("@")
+        let validPassword = validatePassword(password: password)
+        
+        guard containsAt && validPassword else { return false }
+        
+        return true
     }
 }
