@@ -49,11 +49,11 @@ final class StockViewModel: ObservableObject {
         mostOwnedStockTickers = []
         
         faangStocks.forEach { ticker in
-            loadMostOwnedStocksData(for: ticker)
+            loadFAANGStocksData(for: ticker)
         }
         
         mostOwnedStocks.forEach { ticker in
-            loadFAANGStocksData(for: ticker)
+            loadMostOwnedStocksData(for: ticker)
         }
     }
     

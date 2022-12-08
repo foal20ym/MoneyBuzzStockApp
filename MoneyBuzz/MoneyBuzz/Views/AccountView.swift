@@ -23,6 +23,7 @@ struct AccountView: View {
             }
         }
     }
+    
     var loggedin: some View {
         NavigationStack {
             let user = Auth.auth().currentUser

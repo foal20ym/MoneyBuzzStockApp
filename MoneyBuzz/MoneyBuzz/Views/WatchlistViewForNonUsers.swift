@@ -6,9 +6,29 @@
 //
 
 import SwiftUI
-
+import Firebase
+// Test@gmail.com
 struct WatchlistViewForNonUsers: View {
+    @ObservedObject var loginViewModel = LoginViewViewModel()
+    
     var body: some View {
+        NavigationStack {
+            if loginViewModel.isLoggedIn {
+                WatchlistView()
+            } else {
+                content
+            }
+        }
+        .onAppear {
+            Auth.auth().addStateDidChangeListener { auth, user in
+                if user != nil {
+                    loginViewModel.isLoggedIn.toggle()
+                }
+            }
+        }
+    }
+    
+    var content: some View {
         NavigationStack {
             Text("Your watchlist is empty!")
                 .font(.title)

@@ -18,10 +18,12 @@ struct LoginView: View {
     @ObservedObject public var loginViewViewModel = LoginViewViewModel()
     
     var body: some View {
-        if loginViewViewModel.isLoggedIn {
-            AccountView()
-        } else {
-            content
+        NavigationStack {
+            if loginViewViewModel.isLoggedIn {
+                AccountView()
+            } else {
+                content
+            }
         }
     }
     

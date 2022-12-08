@@ -5,15 +5,37 @@
 //  Created by Alexander Forsanker on 11/23/22.
 //
 import SwiftUI
+import Firebase
+
 struct WatchlistView: View {
     @ObservedObject private var stockModel = StockViewModel()
     @ObservedObject private var stockSearchModel = StockSearchViewModel()
-    @ObservedObject private var loginViewModel = LoginViewViewModel()
+    @ObservedObject public var loginViewModel = LoginViewViewModel()
+    
     @State private var searchTicker = ""
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color(red: 0.3703474402, green: 0.8287841678, blue: 0.747587502))]
     }
+    
     var body: some View {
+        NavigationStack {
+            if loginViewModel.isLoggedIn {
+                content
+            } else {
+                WatchlistViewForNonUsers()
+            }
+        }
+        .onAppear {
+            Auth.auth().addStateDidChangeListener { auth, user in
+                if user != nil {
+                    loginViewModel.isLoggedIn.toggle()
+                }
+            }
+        }
+    }
+    
+    
+    var content: some View {
         NavigationStack {
             VStack {
                 List {

@@ -94,8 +94,8 @@ final class LoginViewViewModel: ObservableObject {
     }
     
     func loginBool(email: String, password: String) -> Bool{
-        var containsAt = email.contains("@")
-        var validPassword = validatePassword(password: password)
+        let containsAt = email.contains("@")
+        let validPassword = validatePassword(password: password)
         
         guard containsAt && validPassword else { return false }
         
@@ -103,8 +103,8 @@ final class LoginViewViewModel: ObservableObject {
     }
     
     func registerBool(email: String, password: String) -> Bool{
-        var containsAt = email.contains("@")
-        var validPassword = validatePassword(password: password)
+        let containsAt = email.contains("@")
+        let validPassword = validatePassword(password: password)
         
         guard containsAt && validPassword else { return false }
         
