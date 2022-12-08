@@ -30,7 +30,6 @@ struct AccountView: View {
                 Color(red: 0.3176470588235294, green:0.8,blue: 0.6941176470588235)
                     .accountViewBackgroundModifier()
                 VStack {
-                    let user = Auth.auth().currentUser
                     let userEmail = Auth.auth().currentUser?.email
                     let userID = Auth.auth().currentUser?.uid
                     Text("Email: \(userEmail ?? "Firebase error; FatalError(connection)")")

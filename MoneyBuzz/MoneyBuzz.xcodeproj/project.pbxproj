@@ -24,8 +24,6 @@
 		15FAFE3729313240008C4670 /* StockSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAFE3629313240008C4670 /* StockSearchViewModel.swift */; };
 		15FAFE392931326C008C4670 /* StockSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAFE382931326C008C4670 /* StockSearchData.swift */; };
 		15FAFE3B293132A4008C4670 /* StockSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAFE3A293132A4008C4670 /* StockSearchService.swift */; };
-		15FAFE42293508C1008C4670 /* CurrencyDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAFE41293508C1008C4670 /* CurrencyDataService.swift */; };
-		15FAFE44293508F1008C4670 /* CurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAFE43293508F1008C4670 /* CurrencyData.swift */; };
 		780676112940015900779B15 /* WatchlistViewForNonUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780676102940015900779B15 /* WatchlistViewForNonUsers.swift */; };
 		780948E329391045005C2A63 /* CompanyOverviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780948E229391045005C2A63 /* CompanyOverviewData.swift */; };
 		780948E52939109E005C2A63 /* CompanyOverviewDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780948E42939109E005C2A63 /* CompanyOverviewDataService.swift */; };
@@ -82,8 +80,6 @@
 		15FAFE3629313240008C4670 /* StockSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSearchViewModel.swift; sourceTree = "<group>"; };
 		15FAFE382931326C008C4670 /* StockSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSearchData.swift; sourceTree = "<group>"; };
 		15FAFE3A293132A4008C4670 /* StockSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSearchService.swift; sourceTree = "<group>"; };
-		15FAFE41293508C1008C4670 /* CurrencyDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDataService.swift; sourceTree = "<group>"; };
-		15FAFE43293508F1008C4670 /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
 		780676102940015900779B15 /* WatchlistViewForNonUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewForNonUsers.swift; sourceTree = "<group>"; };
 		780948E229391045005C2A63 /* CompanyOverviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyOverviewData.swift; sourceTree = "<group>"; };
 		780948E42939109E005C2A63 /* CompanyOverviewDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyOverviewDataService.swift; sourceTree = "<group>"; };
@@ -244,7 +240,6 @@
 				78ACCF5A292BE91100528FDE /* DataService.swift */,
 				78EDD508292EF1C7005B56A2 /* NewsDataService.swift */,
 				15FAFE3A293132A4008C4670 /* StockSearchService.swift */,
-				15FAFE41293508C1008C4670 /* CurrencyDataService.swift */,
 				780948E42939109E005C2A63 /* CompanyOverviewDataService.swift */,
 			);
 			path = Service;
@@ -256,7 +251,6 @@
 				157E4156292C08FA00522665 /* StockData.swift */,
 				78EDD506292EE9AB005B56A2 /* NewsData.swift */,
 				15FAFE382931326C008C4670 /* StockSearchData.swift */,
-				15FAFE43293508F1008C4670 /* CurrencyData.swift */,
 				780948E229391045005C2A63 /* CompanyOverviewData.swift */,
 			);
 			path = Model;
@@ -423,7 +417,6 @@
 			files = (
 				780948E329391045005C2A63 /* CompanyOverviewData.swift in Sources */,
 				15556E16293E3D4D004B7D75 /* ViewModifiers.swift in Sources */,
-				15FAFE44293508F1008C4670 /* CurrencyData.swift in Sources */,
 				78ACCF31292BE11D00528FDE /* Persistence.swift in Sources */,
 				780948E52939109E005C2A63 /* CompanyOverviewDataService.swift in Sources */,
 				158D89F3293A190C0071D276 /* AccountView.swift in Sources */,
@@ -443,7 +436,6 @@
 				78EDD50D292FB1E8005B56A2 /* NewsView.swift in Sources */,
 				78EDD504292D2258005B56A2 /* StockDataViewModel.swift in Sources */,
 				780676112940015900779B15 /* WatchlistViewForNonUsers.swift in Sources */,
-				15FAFE42293508C1008C4670 /* CurrencyDataService.swift in Sources */,
 				780948E9293911AC005C2A63 /* IndividualStockView.swift in Sources */,
 				78ACCF28292BE11B00528FDE /* MoneyBuzzApp.swift in Sources */,
 				15A0573D29411DCA0036DAF4 /* UnitTestViewModel.swift in Sources */,

@@ -53,25 +53,25 @@ struct WatchlistView: View {
                         stockSearchModel.searchResults = []
                     }
                 }).navigationTitle("Watchlist")
-                    List {
-                        if !stockModel.stocks.isEmpty {
-                                ForEach(stockModel.stocks) { stock in
-                                    NavigationLink(destination: IndividualStockView( stock: stock)) {
-                                        
-                                        HStack {
-                                            Text("\(stock.metaData.symbol)").foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
-                                            Spacer()
-                                            LineChart(values: stock.closeValues).fill( LinearGradient(gradient: Gradient(colors: [.green.opacity(0.7),.green.opacity(0.2),.green.opacity(0)]),startPoint: .top,endPoint: .bottom)).frame(width: 150, height: 50)
-                                            Text("\(Float(stock.latestClose)!, specifier: "%.2f")").foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
-                                        }
-                                    }
-                                }.onDelete(perform: stockModel.deleteStockFromWatchlist(at:))
-                        } else {
-                            Text("Your watchlist is empty!").font(.title).foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
-                        }
+                List {
+                    if !stockModel.stocks.isEmpty {
+                        ForEach(stockModel.stocks) { stock in
+                            NavigationLink(destination: IndividualStockView( stock: stock)) {
+                                
+                                HStack {
+                                    Text("\(stock.metaData.symbol)").foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
+                                    Spacer()
+                                    LineChart(values: stock.closeValues).fill( LinearGradient(gradient: Gradient(colors: [.green.opacity(0.7),.green.opacity(0.2),.green.opacity(0)]),startPoint: .top,endPoint: .bottom)).frame(width: 150, height: 50)
+                                    Text("\(Float(stock.latestClose)!, specifier: "%.2f")").foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
+                                }
+                            }
+                        }.onDelete(perform: stockModel.deleteStockFromWatchlist(at:))
+                    } else {
+                        Text("Your watchlist is empty!").font(.title).foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
                     }
-                    .frame(width: 400, height: 470)
-                    .scrollContentBackground(.hidden)
+                }
+                .frame(width: 400, height: 470)
+                .scrollContentBackground(.hidden)
             }
         }
         .onAppear {

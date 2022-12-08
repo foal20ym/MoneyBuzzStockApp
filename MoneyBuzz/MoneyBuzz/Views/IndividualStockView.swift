@@ -103,8 +103,8 @@ struct IndividualStockView: View {
 }
 
 /*struct IndividualStockView_Previews: PreviewProvider {
-    static var previews: some View {
-        IndividualStockView(stock)
-    }
-}*/
+ static var previews: some View {
+ IndividualStockView(stock)
+ }
+ }*/
 

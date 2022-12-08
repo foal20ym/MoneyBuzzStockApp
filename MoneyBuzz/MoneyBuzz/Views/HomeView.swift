@@ -6,14 +6,14 @@
 //
 import SwiftUI
 struct HomeView: View {
-    @ObservedObject private var model = StockViewModel()
+    @ObservedObject private var stockViewModel = StockViewModel()
     var body: some View {
         NavigationStack {
             Form {
                 Section {
                     Text("\(Image(systemName: "apple.logo")) FAANG Stocks").font(.title).bold().foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
                     List {
-                        ForEach(model.faangStockTickers) { stock in
+                        ForEach(stockViewModel.faangStockTickers) { stock in
                             HStack {
                                 Text(stock.metaData.symbol)
                                     .foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))
@@ -28,7 +28,7 @@ struct HomeView: View {
                 Section {
                     Text("\(Image(systemName: "globe")) Most Owned Stocks").font(.title).bold().foregroundColor(Color(red: 0.3176470588235294, green: 0.8, blue: 0.6941176470588235))
                     List {
-                        ForEach(model.mostOwnedStockTickers) { stock in
+                        ForEach(stockViewModel.mostOwnedStockTickers) { stock in
                             HStack {
                                 Text(stock.metaData.symbol)
                                     .foregroundColor(Color(red: 0.23921568627450981, green: 0.24705882352941178, blue: 0.3843137254901961))

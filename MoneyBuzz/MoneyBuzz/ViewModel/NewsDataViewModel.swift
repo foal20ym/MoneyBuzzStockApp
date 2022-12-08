@@ -26,7 +26,6 @@ final class NewsDataViewModel: ObservableObject {
     public init() {
         self.news = []
         loadNewsData()
-        dateConverter(rawDate: "2022-11-25T22:59:52.000000Z")
     }
     
     public func dateConverter(rawDate: String) -> String {
@@ -40,7 +39,7 @@ final class NewsDataViewModel: ObservableObject {
         convertDateFormatter.dateFormat = "yyy-MM-dd"
         
         return convertDateFormatter.string(from: oldDate)
-       
+        
     }
     
     public func loadNewsData() {
