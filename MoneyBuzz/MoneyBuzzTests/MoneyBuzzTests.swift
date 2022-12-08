@@ -238,15 +238,6 @@ final class MoneyBuzzTests: XCTestCase {
         XCTAssertTrue(shouldBeTrue)
     }
     
-    func test_CurrencyDataService_validateURL_shoulBeTrue() {
-        let currencyFrom = "EUR"
-        let currencyTo = "USD"
-        let APIKEY = "LO58U5WZML3IIJNW"
-        let shouldBeTrue = unitTestingViewModel.verifyUrl(urlString: "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=\(currencyFrom)&to_currency=\(currencyTo)&apikey=\(APIKEY)")
-
-        XCTAssertTrue(shouldBeTrue)
-    }
-    
     func test_StockDataViewModel_loadDatafromAPI_performanceTest() {
         self.measure {
             for _ in 1..<100 {

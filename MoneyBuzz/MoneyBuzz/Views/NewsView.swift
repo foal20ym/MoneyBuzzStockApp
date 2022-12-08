@@ -14,9 +14,9 @@ struct NewsView: View {
     }
     var body: some View {
         NavigationStack {
-                ForEach(0..<3) {
-                    displayNews(ix: $0)
-                }
+            ForEach(0..<3) {
+                displayNews(ix: $0)
+            }
             .padding()
             Spacer()
                 .navigationTitle("News")

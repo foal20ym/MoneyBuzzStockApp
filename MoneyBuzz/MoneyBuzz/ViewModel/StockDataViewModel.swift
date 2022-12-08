@@ -57,8 +57,7 @@ final class StockViewModel: ObservableObject {
         }
     }
     
-    
-    func loadStockLists() {
+    private func loadStockLists() {
         faangStockTickers = []
         mostOwnedStockTickers = []
         
@@ -77,7 +76,6 @@ final class StockViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
                 return
-                //handle this later on
             case .finished:
                 return
             }
@@ -94,7 +92,6 @@ final class StockViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
                 return
-                //handle this later on
             case .finished:
                 return
             }
@@ -105,7 +102,7 @@ final class StockViewModel: ObservableObject {
         }.store(in: &cancellable)
     }
     
-    func loadFromCoreData() {
+    public func loadFromCoreData() {
         guard loginVm.isLoggedIn == true else {
             return
         }
@@ -123,7 +120,7 @@ final class StockViewModel: ObservableObject {
         }
     }
     
-    func validateTicker() {
+    private func validateTicker() {
         $stockTicker
             .sink { [unowned self] newValue in
                 self.isTickerValid = !newValue.isEmpty
@@ -136,12 +133,15 @@ final class StockViewModel: ObservableObject {
         guard !ticker.isEmpty else { return false }
         let numberRegEx  = ".*[0-9]+.*"
         let texttest1 = NSPredicate(format:"SELF MATCHES %@", numberRegEx)
-        guard !texttest1.evaluate(with: ticker) else { return false }
+        guard !texttest1.evaluate(with: ticker) else {
+            return false
+            
+        }
         
         return true
     }
     
-    func addStockToWatchlist() {
+    public func addStockToWatchlist() {
         let newStock = StockEntity(context: context)
         newStock.ticker = stockTicker
         newStock.userID = LoginViewViewModel.userID
@@ -160,7 +160,7 @@ final class StockViewModel: ObservableObject {
         stockTicker = ""
     }
     
-    func deleteStockFromWatchlist(at indexSet: IndexSet) {
+    public func deleteStockFromWatchlist(at indexSet: IndexSet) {
         guard let index = indexSet.first else {
             return
             
@@ -180,13 +180,12 @@ final class StockViewModel: ObservableObject {
         }
     }
     
-    public func loadStockData(for stockTicker: String) {
+    private func loadStockData(for stockTicker: String) {
         DataService.getDataFromStockAPI(for: stockTicker.uppercased()).sink { completion in
             switch completion {
             case .failure(let error):
                 print(error)
                 return
-                //handle this later on
             case .finished:
                 return
             }

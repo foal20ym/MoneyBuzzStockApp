@@ -28,7 +28,6 @@ final class StockSearchViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
                 return
-                //handle this later on
             case .finished:
                 return
             }

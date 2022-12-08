@@ -67,8 +67,6 @@ struct StockData: Codable, Identifiable {
         
     }
     
-    
-    
     var closeValues: [Double] {
         let rawValues = timeSeries5min.values.map { Double($0.close)! }
         let max = rawValues.max()!

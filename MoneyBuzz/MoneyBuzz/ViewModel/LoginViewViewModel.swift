@@ -17,18 +17,7 @@ final class LoginViewViewModel: ObservableObject {
     @Published var isAuthError = false
     @Published var authErrorDescription = ""
     
-    func loadFromCoreData() {
-        do {
-            email = try context.fetch(UserEntity.fetchRequest())
-            for i in email {
-                print("here comes the users: \(i)")
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
-    func login(email: String, password: String){
+    public func login(email: String, password: String){
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if error != nil {
                 self.isAuthError.toggle()
@@ -42,7 +31,7 @@ final class LoginViewViewModel: ObservableObject {
         print("From LoginViewModel: \(LoginViewViewModel.userID)")
     }
     
-    func register(email: String, password: String) {
+    public func register(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if error != nil {
                 self.isAuthError.toggle()
@@ -55,7 +44,7 @@ final class LoginViewViewModel: ObservableObject {
         addToUserEntity(for: email)
     }
     
-    func signout(){
+    public func signout(){
         do { try Auth.auth().signOut()
             self.isLoggedIn = false
         } catch let error {
@@ -64,7 +53,7 @@ final class LoginViewViewModel: ObservableObject {
     }
     
     
-    func addToUserEntity(for userID: String) {
+    private func addToUserEntity(for userID: String) {
         let newUser = UserEntity(context: context)
         guard userID != "Unknown ID" else {
             print("Error when fetching user ID")
